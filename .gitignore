@@ -1,0 +1,4 @@
+tmp/*
+!tmp/.gitkeep
+content/userdata/*
+!content/userdata/.gitkeep
