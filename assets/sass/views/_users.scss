@@ -1,0 +1,88 @@
+.users-main{
+  width: 70%;
+  @media all{
+    @media (max-width: 480px){
+      width:calc(100% - 8px);
+      padding: 4px 0;
+        margin-top: 36px;
+    }
+  }
+  .search-form{
+    @media all{
+      @media (max-width: 480px){
+        display: none;
+      }
+    }
+    margin-top: 32px;
+
+    width: calc(100% - 32px);
+    margin:32px 16px 0 16px;
+    form{
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: row;
+      input[type=text]{
+        padding: 8px;
+        width:calc(75% - 24px);
+        border: none;
+        outline: none;
+        background: $light-color;
+        font-size: 0.8rem;
+        height: 24px;
+        margin-right: 16px;
+        background: $light-color;
+        border:solid 1px $border-color;
+        border-radius: 4px;
+      //  border-bottom: solid 1px $border-color;
+      }
+      input[type=submit]{
+        width:calc(25% - 24px);
+        text-align: center;
+        cursor: pointer;
+        font-family: $text-main-font;
+        font-size: 0.8rem;
+        background: $buttons-color;
+        border: solid 1px $buttons-outline;
+        border-radius: 4px;
+        margin-left: 16px;
+        color: $light-color;
+      }
+    }
+  }
+  margin-top: 50px;
+  .users{
+    padding: 16px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    .user{
+      @media (max-width: 480px){
+        width:calc(50% - 26px);
+        margin: 4px;
+      }
+      width:calc(25% - 50px);
+      border: 1px solid $border-color;
+      border-radius: 4px;
+      padding: 8px;
+      background: $light-color;
+      overflow: hidden;
+      margin: 16px;
+      .user-avatar{
+        width: 100%;
+        img{
+          width:100%;
+        }
+      }
+      .user-name{
+        font-family: $text-main-font;
+        color: $text-main-color;
+        font-size: 0.8rem;
+        text-align: center;
+      }
+    }
+  }
+}

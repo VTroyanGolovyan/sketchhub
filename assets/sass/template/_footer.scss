@@ -1,0 +1,9 @@
+footer{
+  width: calc(100% - 16px);
+  border-top:solid 1px $border-color;
+  padding: 8px;
+  font-size: 0.8rem;
+  font-family: $text-main-font;
+  color: $text-main-color;
+  background: $dark-bg;
+}
