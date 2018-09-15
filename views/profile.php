@@ -31,6 +31,14 @@
           </div>
           <div class="info">
             <div class="name"><?php print $user['name'].' '.$user['last_name']; ?></div>
+            <div class = "followers-following">
+               <a>
+                 Подписчики
+               </a>
+               <a>
+                 Подписки
+               </a>
+            </div>
             <div class = "profile-buttons">
               <?php if ($user['id'] == $_SESSION[$host]['id']){?>
               <label for = "photo-file">Добавить фотографию</label>
@@ -40,8 +48,12 @@
                 <input type = "submit">
               </form>
             <?php }else{ ?>
-              <label for = "photo-file">Подписаться</label>
-              <label for = "photo-file">Сообщение</label>
+              <a href = "?cmd=follow&act=in&id=<?php print $user['id']; ?>&view=profile">
+                <label>Подписаться</label>
+              </a>
+              <a>
+                <label>Сообщение</label>
+              </a>
             <?php } ?>
             </div>
           </div>

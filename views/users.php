@@ -25,7 +25,13 @@
         }
       }else $where = '';
 
-      $query = 'SELECT * FROM `users` '.$where.' ORDER BY `id` DESC';
+      if (isset($_GET['page']))
+         $page = (int)$_GET['page'];
+      else $page = 1;
+      $l = ($page-1)*12;
+      $r = ($page)*12;
+
+      $query = 'SELECT * FROM `users` '.$where.' ORDER BY `id` DESC LIMIT '.$l.','.$r;
       $res = $mysqli->query($query);
       if ($res->num_rows !=0){
         while ($user = $res->fetch_assoc()){ ?>
@@ -46,6 +52,12 @@
          </div>
 <?php } ?>
 <?php } ?>
+   </section>
+   <section>
+   <?php
+      $query = 'SELECT COUNT(*) FROM `users` '.$where;
+      render_pages($mysqli,$query,12,'users');
+    ?>
    </section>
 </main>
 <?php include('./template/footer.php'); ?>

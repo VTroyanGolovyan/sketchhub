@@ -7,6 +7,7 @@
 
   require_once('./utility/image_worker.php');
   require_once('./utility/functions.php');
+  require_once('./utility/pagination.php');
   require_once('./db/db.php');
   session_start();
 ?>

@@ -12,3 +12,4 @@
         <a href="?view=signin"> Есть аккаунт? Войдите! </a>
       </section>
 </main>
+<?php include('./template/footer.php'); ?>

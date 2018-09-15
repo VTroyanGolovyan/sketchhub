@@ -10,3 +10,4 @@
       <a href="?view=signup"> Нет аккаунта? Зарегистрируйтесь! </a>
     </section>
 </main>
+<?php include('./template/footer.php'); ?>
