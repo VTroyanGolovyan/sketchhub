@@ -1,0 +1,87 @@
+.main-news{
+  margin-top: 50px;
+  width: 70%;
+  padding: 36px 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  .news{
+    width: calc(70% - 36px);
+    margin-right: 36px;
+    overflow-x: hidden;
+    .news-item{
+      width: calc(100% - 2px);
+      background: $light-color;
+      border-radius: 4px;
+      margin-bottom: 45px;
+      border: solid 1px $border-color;
+      .publisher{
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: row;
+        align-items: center;
+        padding: 12px;
+        .avatar{
+          width:50px;
+          height: 50px;
+          margin-right: 12px;
+          border: solid 1px $border-color;
+          border-radius: 30px;
+          overflow: hidden;
+          img{
+            width: 100%;
+            border-radius: 30px;
+          }
+        }
+        .name{
+          font-size: 0.8rem;
+          font-weight: bold;
+          font-family: $text-main-font;
+          color: $text-main-color
+        }
+
+      }
+      .image{
+        img{
+          width: 100%;
+        }
+        overflow: hidden;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        border-bottom: solid 1px $border-color;
+      }
+      .info{
+        display: flex;
+        justify-content: space-between;
+        padding: 12px;
+        align-items: center;
+        .counters{
+          display: flex;
+          justify-content: space-between;
+          font-size: 0.8rem;
+          width: 50%;
+          font-style: $text-main-font;
+        }
+
+        .date{
+          font-style: $text-main-font;
+          font-weight: lighter;
+          font-size: 0.6rem;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+        }
+      }
+    }
+  }
+  .news-nav{
+    width:calc(30% - 26px);
+    background: $light-color;
+    border-radius: 4px;
+    padding: 12px;
+    border: solid 1px $border-color;
+  }
+}

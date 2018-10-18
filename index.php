@@ -37,10 +37,10 @@
 
         if (isset($VIEW_LIST[$_GET['view']])){
           include_once('./views/'.$VIEW_LIST[$_GET['view']]);
-        }else{
-          if (isset($_SESSION[$host]['id']))
+        }elseif (isset($_SESSION[$host]['id']))
           include_once('./views/profile.php');
-        }
+        else include_once('./views/signin.php');
+
       }else{
         if (isset($_SESSION[$host]['id']))
             include_once('./views/profile.php');
