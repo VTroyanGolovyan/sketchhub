@@ -151,6 +151,10 @@ function Paper(width,height,state){
       dlLink.click();
       document.body.removeChild(dlLink);
   }
+
+  this.getImageDataUrl = function(){
+     return this.getDocument().toDataURL("image/png"); //получили изображение
+  }
   this.renderLayersControllers = function(id){
     function handleDragStart(e) {
       this.style.opacity = '0.4';

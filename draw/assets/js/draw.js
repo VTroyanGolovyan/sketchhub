@@ -37,6 +37,9 @@ var draw = {
     x:0,
     y:0
   },
+  getPaper : function(){
+    return this.state.paper;
+  },
   getXY : function(evt){
     var rect = draw.state.view.getBoundingClientRect();
     var x = evt.clientX - rect.left;

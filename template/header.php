@@ -3,7 +3,7 @@
          <h1>SketchHub</h1>
        </section>
        <nav>
-         <a href="draw">
+         <a target="_blank" href="draw">
            <div>Рисовать</div>
          </a>
          <a href="?view=users">

@@ -19,20 +19,39 @@ function renderDownload(){
   png.className = 'download-item';
   png.innerHTML = "Картинка png";
   png.onclick = function(){
-    draw.state.paper.download('image/png','png');
+    draw.getPaper().download('image/png','png');
   }
-  
+
   var jpeg = document.createElement('div');
   jpeg.innerHTML = "Картинка jpeg";
   jpeg.className = 'download-item';
   jpeg.onclick = function(){
-    draw.state.paper.download('image/jpeg','jpeg');
+    draw.getPaper().download('image/jpeg','jpeg');
+  }
+
+  var post =  document.createElement('div');
+  post.innerHTML = "Сохранить в профиль";
+  post.className = 'download-item';
+  post.onclick = function(){
+    var image = draw.getPaper().getImageDataUrl();
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST","../ajax/upload_scketch.php",true);
+
+    xhr.onreadystatechange = function(){
+      if (xhr.readyState == 4){
+        alert(xhr.responseText);
+      }
+    }
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.send('image='+image);
   }
 
   var container = document.createElement("div");
   container.className = 'download-container';
   download.appendChild(close);
   container.appendChild(select);
+  container.appendChild(post);
   container.appendChild(png);
   container.appendChild(jpeg);
   download.appendChild(container);

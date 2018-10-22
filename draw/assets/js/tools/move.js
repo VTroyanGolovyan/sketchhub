@@ -21,8 +21,8 @@ function Move(state, ctx){
   }
   this.onmousemove  = function(coords){
      if (this.active){
-       var dx = (coords.x - this.startX)/8;
-       var dy = (coords.y - this.startY)/8;
+       var dx = (coords.x - this.startX);
+       var dy = (coords.y - this.startY);
        this.state.paper.getLayer(this.state.activeLayer).move(dx,dy);
      }
   }
