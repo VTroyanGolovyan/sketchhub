@@ -1,5 +1,8 @@
 <?php
   function render_pages($mysqli,$query,$count_items,$view){
+    ?>
+    <section class="page-list">
+    <?php
       $res = $mysqli->query($query);
       if ($res->num_rows != 0){
         $row = $res->fetch_assoc();
@@ -16,6 +19,8 @@
            </a>
 <?php   }
       }
+      ?>
+    </section >
+<?php
   }
-
 ?>

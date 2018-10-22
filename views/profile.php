@@ -69,7 +69,15 @@
 
         <section class = "galery">
     <?php
-       $query = 'SELECT * FROM `photos` WHERE `owner`="'.$id.'" ORDER BY `id` DESC';
+      if (isset($_GET['page'])){
+        $p = (int)$_GET['page'];
+        $l = ($p-1)*12;
+        $r = $p*12;
+      }else{
+        $l = 0;
+        $r = 12;
+      }
+       $query = 'SELECT * FROM `photos` WHERE `owner`="'.$id.'" ORDER BY `id` DESC LIMIT '.$l.','.$r;
        $res = $mysqli->query($query);
        if ($res->num_rows != 0){
            while($photo = $res->fetch_assoc()){ ?>
@@ -85,4 +93,10 @@
         </section>
     </main>
 <?php } ?>
+<section>
+<?php
+   $query = 'SELECT COUNT(*) FROM `photos` WHERE `owner`="'.$id.'"';
+   render_pages($mysqli,$query,12,'profile&id='.$id);
+ ?>
+</section>
 <?php include_once('./template/footer.php'); ?>

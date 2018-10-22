@@ -25,6 +25,7 @@
     <meta charset = "utf-8">
     <title>Sketchhub</title>
     <link rel = "stylesheet" type = "text/css" href = "assets/css/main.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="./sh.png">
     <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">

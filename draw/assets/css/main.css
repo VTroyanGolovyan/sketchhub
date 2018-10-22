@@ -60,7 +60,7 @@ body{
 }
 
 .pallete{
-   width: 60px;
+   width: 40%;
    display: flex;
    flex-wrap: nowrap;
    align-items: center;
@@ -79,7 +79,7 @@ body{
   flex-direction: column;
   width: calc(100% - 45px);
   height: 70px;
-  display: none;
+
 }
 .color-line{
   width: 100%;
@@ -742,9 +742,6 @@ input::-webkit-inner-spin-button {
   }
   .documentation,.layers{
     width: 20%;
-  }
-  .color-colection{
-    display: none;
   }
 }
 @media all and (max-width:900px){

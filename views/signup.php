@@ -9,6 +9,21 @@
           <input name = "check" type="password" placeholder="Повторите пароль" required>
           <input type = "submit" value="Зарегистрироваться">
         </form>
+        <div class="error">
+          <?php
+            if (isset($_GET['error'])){
+              switch ($_GET['error']) {
+                case '1':
+                    print 'Почта уже занята';
+                  break;
+
+                default:
+                  // code...
+                  break;
+              }
+            }
+           ?>
+        </div>
         <a href="?view=signin"> Есть аккаунт? Войдите! </a>
       </section>
 </main>

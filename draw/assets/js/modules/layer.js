@@ -35,8 +35,6 @@ function Layer(x,y,width,height,type = 0,name = ""){
       this.textctx.font = size + "px Georgia";
       this.textctx.textBaseline = "top";
       this.textctx.fillText(this.name,0,0,this.textcanvas.width);
-
-
       this.canvas.width = this.canvas.width;
       this.ctx.drawImage(this.textcanvas,0,0,this.textcanvas.width,this.textcanvas.height,0,0,this.canvas.width,this.canvas.height);
       state.paper.save("Цвет текста");

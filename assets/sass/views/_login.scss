@@ -56,7 +56,9 @@
         cursor: pointer;
         border: solid 1px $buttons-outline;
       }
-
+      input:last-child{
+        margin-bottom: 0;
+      }
     }
     @media all{
       @media (max-width: 480px){
@@ -66,5 +68,10 @@
           width:50%;
       }
     }
+  }
+  .error{
+    color: $warning-color;
+    font-size: 0.8rem;
+    font-family: $text-main-font;
   }
 }

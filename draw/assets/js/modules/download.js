@@ -14,12 +14,14 @@ function renderDownload(){
   var select = document.createElement("div");
   select.innerHTML = 'Выберите формат';
   select.className = 'select-format';
+
   var png = document.createElement('div');
   png.className = 'download-item';
   png.innerHTML = "Картинка png";
   png.onclick = function(){
     draw.state.paper.download('image/png','png');
   }
+  
   var jpeg = document.createElement('div');
   jpeg.innerHTML = "Картинка jpeg";
   jpeg.className = 'download-item';
@@ -34,6 +36,6 @@ function renderDownload(){
   container.appendChild(png);
   container.appendChild(jpeg);
   download.appendChild(container);
-  
+
   document.body.appendChild(download);
 }

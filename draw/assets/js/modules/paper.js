@@ -48,14 +48,15 @@ function Paper(width,height,state){
               if (state.area.scale < 1){
                 this.ctx.lineWidth = Math.round(1/state.area.scale)
               }
-              this.square(this.layers[this.state.activeLayer].x,this.layers[this.state.activeLayer].y);
-              this.square(this.layers[this.state.activeLayer].x+this.layers[this.state.activeLayer].width,
+              if (!state.hotkeys.shift){
+                 this.square(this.layers[this.state.activeLayer].x,this.layers[this.state.activeLayer].y);
+                 this.square(this.layers[this.state.activeLayer].x+this.layers[this.state.activeLayer].width,
                           this.layers[this.state.activeLayer].y+this.layers[this.state.activeLayer].height);
-              this.square(this.layers[this.state.activeLayer].x,
+                 this.square(this.layers[this.state.activeLayer].x,
                           this.layers[this.state.activeLayer].y+this.layers[this.state.activeLayer].height);
-              this.square(this.layers[this.state.activeLayer].x+this.layers[this.state.activeLayer].width,
+                 this.square(this.layers[this.state.activeLayer].x+this.layers[this.state.activeLayer].width,
                           this.layers[this.state.activeLayer].y);
-
+              }
               this.square(this.layers[this.state.activeLayer].x+Math.floor(this.layers[this.state.activeLayer].width/2),this.layers[this.state.activeLayer].y);
               this.square(this.layers[this.state.activeLayer].x+this.layers[this.state.activeLayer].width,
                                      this.layers[this.state.activeLayer].y+Math.floor(this.layers[this.state.activeLayer].height/2));
@@ -65,21 +66,19 @@ function Paper(width,height,state){
                                       this.layers[this.state.activeLayer].y+Math.floor(this.layers[this.state.activeLayer].height));
       }
     }
-
-
     return this.view;
   }
+
   this.ellips = function(x,y){
     this.ctx.beginPath();
     this.ctx.ellipse(x,y, Math.floor(15/state.area.scale), Math.floor(15/state.area.scale),0,0,2 * Math.PI);
     this.ctx.fill();
   }
+
   this.square = function(x,y){
-  //  alert(x+" "+y)
     this.ctx.setLineDash([]);
     this.ctx.strokeRect(x-Math.floor(7/state.area.scale),y-Math.floor(7/state.area.scale), Math.floor(14/state.area.scale),Math.floor(14/state.area.scale));
     this.ctx.strokeRect(x-Math.floor(7/state.area.scale),y-Math.floor(7/state.area.scale), Math.floor(14/state.area.scale),Math.floor(14/state.area.scale));
-
   }
   this.getDocument = function(){
     this.ctx.fillStyle = "white";
@@ -94,12 +93,15 @@ function Paper(width,height,state){
     }
     return this.view;
   }
+
   this.getLayer = function(i){
     return this.layers[i];
   }
+
   this.save = function(name=""){
     this.getLayer(this.state.activeLayer).save(name)
   }
+
   this.deleteLayer = function(id){
     if (this.layers.length > 0){
       this.state.deletedLayers.push(this.layers[id]);
@@ -118,6 +120,7 @@ function Paper(width,height,state){
       draw.changeTool(this.state.toolName);
     }
   }
+
   this.addLayer = function(x,y,width,height,type=0){
     this.layers.push(new Layer(x,y,width,height,type,"Слой "+(this.layers.length+1)));
     this.state.activeLayer = this.layers.length-1;
@@ -126,14 +129,15 @@ function Paper(width,height,state){
        this.state.toolName = 'Scale';
     draw.changeTool(this.state.toolName);
   }
+
   this.changeActiveLayer = function(id){
     this.state.activeLayer = id;
     draw.changeTool(this.state.toolName);
     this.renderLayersControllers('layers');
     this.getLayer(this.state.activeLayer).renderHistory(document.getElementById("history-list"));
   }
-  this.download = function exportCanvasAsPNG(mime, type) {
 
+  this.download = function exportCanvasAsPNG(mime, type) {
       var canvasElement = this.getDocument();
       var fileName = Math.random().toString(36).substring(4)+"."+type;
       var imgURL = canvasElement.toDataURL(mime);
@@ -241,12 +245,17 @@ function Paper(width,height,state){
         if (confirm("Удалить слой (Востановление ctrl+e)?"))
            t.deleteLayer(this.getAttribute("data-id"));
       }
+
+
+      buttoncont.appendChild(topButton);
+      topButton.className = "onhover";
+      bottomButton.className = "onhover";
+      if (i > 1)
+        buttoncont.appendChild(bottomButton);
+
       if(this.layers[i].type == 1)
         buttoncont.appendChild(this.colorChanger(this.layers[i]));
       buttoncont.appendChild(del)
-      buttoncont.appendChild(topButton);
-      if (i > 1)
-        buttoncont.appendChild(bottomButton);
       topLayerContainer.appendChild(buttoncont);
 
       var imgCont = document.createElement('div');

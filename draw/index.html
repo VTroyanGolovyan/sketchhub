@@ -33,7 +33,6 @@
        <div class = "toolbox">
             <!-- палитра -->
             <div class = "pallete" id = "palette">
-                <input type="checkbox" id = "toogle-palette">
                 <div id = "color-colection" class = "color-colection">
                     <div class = "color-line">
                         <div onclick = "draw.changeColorRGB(0,0,0)" class =  "color" style="background:rgb(0,0,0)"></div>
@@ -63,26 +62,6 @@
                         <div onclick = "draw.changeColorRGB(85, 107, 47)" class =  "color limited" style="background:rgb(85, 107, 47)"></div>
                         <div onclick = "draw.changeColorRGB(107, 142, 35)" class =  "color limited" style="background:rgb(107, 142, 35)"></div>
                     </div>
-              </div>
-              <div id = "color-picker" class = "color-picker">
-                   <div class = "select-line">
-                       <input class = "color-range" onchange="draw.changeColor(1,1)" id = "r" min = "0" max = "255" type = "range">
-                       <div class = "rgb-div">
-                           <span>R:</span><input oninput="draw.changeColor(1,2)" value = "0" type="number" id = "r1" min="0" max="255">
-                       </div>
-                   </div>
-                   <div class = "select-line">
-                       <input class = "color-range" onchange="draw.changeColor(1,1)" id = "g" min = "0" max = "255" type = "range">
-                       <div class = "rgb-div">
-                           <span>G:</span><input oninput="draw.changeColor(1,2)" value = "0" type="number" id = "g1" min="0" max="255">
-                       </div>
-                   </div>
-                   <div class = "select-line">
-                       <input class = "color-range" onchange="draw.changeColor(1,1)" id = "b" min = "0" max = "255" type = "range">
-                       <div class = "rgb-div">
-                           <span>B:</span><input oninput="draw.changeColor(1,2)" value = "0" type="number" id = "b1" min="0" max="255">
-                       </div>
-                   </div>
               </div>
               <label  class = "main-color" id = "main-color"><input id = 'color-input' oninput="draw.colorInput()" type = 'color'></label>
             </div>
@@ -173,11 +152,8 @@
                 </div>
                 <div class="open-history-list">
                   <label title="Помощь" for="help">
-                    <img title="История" src = "assets/icon/question.png">
+                    <img title="Справка" src = "assets/icon/question.png">
                   </label>
-                  <div class = "history-list">
-                  <!--  <div id = "history-list" class = "real-history-list"></div> -->
-                  </div>
                 </div>
               </div>
             </div>
@@ -228,88 +204,6 @@
        </div>
 
        <div id = "history-list" class = "documentation">
-         <section>
-           <h3>Инструменты</h3>
-           <p>
-              1)<img src = "assets/icon/pencil.png"> Карандаш (p) - предназначен для рисования линий.
-           </p>
-           <p>
-              2)<img src = "assets/icon/hand.png"> Рука (h) - предназначена для пролистывания документа.
-           </p>
-           <p>
-              3)<img src = "assets/icon/stroke-square.png"> Прямоугольник (s) - предназначен для рисования прямоугольников(shift - квадрат).
-           </p>
-           <p>
-              4)<img src = "assets/icon/triangle.png"> Треугольник - предназначен для рисования треугольников.
-           </p>
-           <p>
-              5)<img src = "assets/icon/ellips.png"> Эллипс (j) - предназначен для рисования эллипсов(shift - круг).
-           </p>
-           <p>
-              6)<img src = "assets/icon/line.png"> Прямая (b) - предназначен для рисования прямых линий.
-           </p>
-           <p>
-              7)<img src = "assets/icon/addlayer.png"> Слой (l) - предназначен для создания слоев.
-           </p>
-           <p>
-              8)<img src = "assets/icon/add-image-layer.png"> Изображение (i) - предназначен для вставки картинок(каждая картинка = новый слой).
-           </p>
-           <p>
-              9)<img src = "assets/icon/add-image-layer.png"> Ластик (g) - предназначен для стирания нарисованых элементов.
-           </p>
-           <p>
-              10)<img src = "assets/icon/pipette.png"> Пипетка (n) - предназначена для получения цвета точки.
-           </p>
-           <p>
-              11)<img src = "assets/icon/fill.png"> Заливка (f) - предназначена заливки области.
-           </p>
-           <p>
-              12)<img src = "assets/icon/move.png"> Перемещение (m) - предназначено для смещения слоев.
-           </p>
-           <p>
-              13)<img src = "assets/icon/scale.png"> Растяжка (w) - предназначено для изменения размеров слоя.
-           </p>
-           <p>
-              14)<img src = "assets/icon/cut.png"> Ножницы (u) - предназначены для обрезки слоев.
-           </p>
-           <p>
-              15)<img src = "assets/icon/text.png"> Текст (q) - предназначен для рисования текста.
-           </p>
-         </section>
-         <section>
-           <h3>Слои</h3>
-           <p>
-             Справа находиться панель слоев, в ней находяться миниатюры слоев их названия и кнопки управления.
-             Активный слой подсвечивается ,белым контуром на панели слоев
-             Cлой можно Удалить(клавиша delete удаляет активный слой или кнопка с мусорным ведром)
-             Для востановления последнего удаленного слоя нужно нажать ctrl+e;
-           </p>
-           <p>
-             Также слои можно двигать
-           </p>
-           <p>
-             Каждый слой имеет историю изменений для возврата назад или вперед используйте стрелки справа вверху или ctrl+z, ctrl+y
-           </p>
-         </section>
-         <section>
-           <h3>Цвета</h3>
-           <p>
-              Сверху слева находиться панель цветов.
-              Также можно выбрать любой цвет. Для этого нужно нажать на большой квадрат цвета.
-           </p>
-         </section>
-         <section>
-           <h3>Еще немного</h3>
-           <p>
-             Можно перейти в полноэкранный режим нажав на кнопку справа вверху
-           </p>
-           <p>
-             Можно скачать изображение
-           </p>
-           <p>
-             Можно выбрать шаблон
-           </p>
-         </section>
        </div>
        <input type="checkbox" id = "help">
        <div id = "help-list" class = "dark-mask">

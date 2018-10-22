@@ -122,12 +122,8 @@ var draw = {
   },
   simpleScale : function(x){
     draw.state.area.scale+=x;
-    //if ((draw.state.paper.width*draw.state.area.scale < draw.state.view.width)){
         draw.state.area.x = -Math.round(Math.round((draw.state.view.width - draw.state.paper.width*draw.state.area.scale)/2)/draw.state.area.scale);
-  //  }
-    //if (draw.state.paper.height*draw.state.area.scale < draw.state.view.height){
         draw.state.area.y = -Math.round(Math.round((draw.state.view.height - draw.state.paper.height*draw.state.area.scale)/2)/draw.state.area.scale);
-  //  }
   },
   init : function(id){
 
@@ -193,7 +189,6 @@ var draw = {
 
     draw.state.view.ontouchstart = function(e){
         draw.state.tool.onmousedown(draw.getTouchXY(e));
-
     }
     draw.state.view.ontouchmove = function(e){
         draw.state.tool.onmousemove(draw.getTouchXY(e));
@@ -202,10 +197,10 @@ var draw = {
         draw.state.tool.onmouseup(draw.getTouchXY(e));
     }
     draw.state.view.ontouchleave = function(e){
-       draw.state.tool.onmouseout();
+        draw.state.tool.onmouseout();
     }
     draw.state.view.ontouchcancel = function(e){
-       draw.state.tool.onmouseout();
+        draw.state.tool.onmouseout();
     }
 
     document.body.onkeypress = function(e){
@@ -219,7 +214,7 @@ var draw = {
            draw.state.area.y-=10;
         }else if(e.keyCode == 46){ //delete
           if (confirm("Удалить слой (Востановление ctrl+e)?"))
-           draw.state.paper.deleteLayer(draw.state.activeLayer);
+             draw.state.paper.deleteLayer(draw.state.activeLayer);
         }
     }
 
@@ -306,8 +301,6 @@ var draw = {
   },
   changeTool : function(toolName,url=''){
     close();
-    if (document.getElementById('tool-mini'))
-      document.getElementById('tool-mini').remove();
     document.body.style.cursor = "default";
     if (document.getElementById('fileup'))
       document.getElementById('fileup').remove();
@@ -469,7 +462,7 @@ var draw = {
 }
 
 draw.init("draw-area");
-
+renderShablones();
 function toggleFullScreen(elem) {
     // ## The below if statement seems to work better ## if ((document.fullScreenElement && document.fullScreenElement !== null) || (document.msfullscreenElement && document.msfullscreenElement !== null) || (!document.mozFullScreen && !document.webkitIsFullScreen)) {
     if ((document.fullScreenElement !== undefined && document.fullScreenElement === null) || (document.msFullscreenElement !== undefined && document.msFullscreenElement === null) || (document.mozFullScreen !== undefined && !document.mozFullScreen) || (document.webkitIsFullScreen !== undefined && !document.webkitIsFullScreen)) {

@@ -9,4 +9,12 @@ function generate_hash($length){
      }
      return $hash;
 }
+//кривой редирект
+function refresh($url)
+{
+    print '<script>';
+    print 'location.href="'.$url.'";';
+    print '</script>';
+    exit;
+}
  ?>
