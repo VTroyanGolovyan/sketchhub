@@ -433,7 +433,6 @@ var draw = {
     } : null;
   },
   colorInput : function(){
-
     draw.state.mainColor = document.getElementById('color-input').value;
     draw.state.mainColorRGBA = draw.hexToRGBA(document.getElementById('color-input').value);
     draw.state.mainColor = "rgb(" +   draw.state.mainColorRGBA.r + ","+   draw.state.mainColorRGBA.g +","+   draw.state.mainColorRGBA.b +")";
@@ -467,7 +466,6 @@ var draw = {
 draw.init("draw-area");
 renderShablones();
 function toggleFullScreen(elem) {
-    // ## The below if statement seems to work better ## if ((document.fullScreenElement && document.fullScreenElement !== null) || (document.msfullscreenElement && document.msfullscreenElement !== null) || (!document.mozFullScreen && !document.webkitIsFullScreen)) {
     if ((document.fullScreenElement !== undefined && document.fullScreenElement === null) || (document.msFullscreenElement !== undefined && document.msFullscreenElement === null) || (document.mozFullScreen !== undefined && !document.mozFullScreen) || (document.webkitIsFullScreen !== undefined && !document.webkitIsFullScreen)) {
         if (elem.requestFullScreen) {
             elem.requestFullScreen();
