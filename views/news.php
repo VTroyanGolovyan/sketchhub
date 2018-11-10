@@ -10,7 +10,9 @@
         $l = 0;
         $r = 12;
       }
-      $query = 'SELECT `photos`.*,`users`.`name`,`users`.`last_name`,`users`.`avatar` FROM `photos` INNER JOIN `users` ON `photos`.`owner`=`users`.`id`  WHERE (`owner` IN (SELECT `object` FROM `followers` WHERE `follower`="'.$_SESSION[$host]['id'].'")) or `owner` = "'.$_SESSION[$host]['id'].'" ORDER BY `posted` DESC LIMIT '.$l.','.$r;
+      $query = 'SELECT `photos`.*,`users`.`name`,`users`.`last_name`,`users`.`avatar` FROM `photos`
+                INNER JOIN `users` ON `photos`.`owner`=`users`.`id`
+                WHERE (`owner` IN (SELECT `object` FROM `followers` WHERE `follower`="'.$_SESSION[$host]['id'].'")) or `owner` = "'.$_SESSION[$host]['id'].'" ORDER BY `posted` DESC LIMIT '.$l.','.$r;
       $res = $mysqli->query($query);
       if ($res->num_rows != 0){
         while ($row = $res->fetch_assoc()){ ?>
