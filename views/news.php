@@ -58,7 +58,7 @@
  ?>
   </section>
   <section class="news-nav">
-    ds
+    В разработке ...
   </section>
 </main>
 <section>

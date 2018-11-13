@@ -32,10 +32,10 @@
           <div class="info">
             <div class="name"><?php print $user['name'].' '.$user['last_name']; ?></div>
             <div class = "followers-following">
-               <a>
+               <a href="?view=followers&id=<?php print $user['id']; ?>&type=0">
                  Подписчики
                </a>
-               <a>
+               <a href="?view=followers&id=<?php print $user['id']; ?>&type=1">
                  Подписки
                </a>
             </div>
@@ -55,6 +55,9 @@
                 <label>Сообщение</label>
               </a>
             <?php } ?>
+            </div>
+            <div class="status">
+               UA Web-Developer 17 y.o.
             </div>
           </div>
         </header>

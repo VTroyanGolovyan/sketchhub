@@ -60,11 +60,6 @@
     "preview" : "assets/preview/oap.jpg"
   },
   {
-    "name" : "Обложка на удостоверение УБД (эко-кожа)",
-    "url" : "assets/shablones/oubd.png",
-    "preview" : "assets/preview/oubd.jpg"
-  },
-  {
     "name" : "Паспорт (эко-кожа)",
     "url" : "assets/shablones/op.png",
     "preview" : "assets/preview/op.jpg"
