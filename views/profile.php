@@ -75,12 +75,13 @@
       if (isset($_GET['page'])){
         $p = (int)$_GET['page'];
         $l = ($p-1)*12;
-        $r = $p*12;
+        $c = 12;
       }else{
         $l = 0;
-        $r = 12;
+        $c = 12;
       }
-       $query = 'SELECT * FROM `photos` WHERE `owner`="'.$id.'" ORDER BY `id` DESC LIMIT '.$l.','.$r;
+       $query = 'SELECT * FROM `photos` WHERE `owner`="'.$id.'" ORDER BY `id` DESC LIMIT '.$l.','.$c;
+       
        $res = $mysqli->query($query);
        if ($res->num_rows != 0){
            while($photo = $res->fetch_assoc()){ ?>

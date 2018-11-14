@@ -58,7 +58,38 @@
  ?>
   </section>
   <section class="news-nav">
-    В разработке ...
+    <div class="news-nav-section">
+    <?php
+      $id = $_SESSION[$host]['id'];
+
+      $where = 'WHERE `follower`="'.$id.'"';
+      $join =  'INNER JOIN `users` ON `users`.`id`=`followers`.`object`';
+
+      $query = 'SELECT * FROM `followers` '.$join.' '.$where.' ORDER BY `users`.`id` LIMIT 6';
+      $res = $mysqli->query($query);
+      if ($res->num_rows != 0){
+        while ($user = $res->fetch_assoc()){
+          ?>
+          <a class="user-link" href="#id1">
+            <div class="user-link-left">
+              <?php
+                if ($user['avatar'] == "")
+                  $url = 'assets/img/default.png';
+                else $url = $user['avatar'];
+              ?>
+              <img src="<?php print $url; ?>">
+            </div>
+            <div class="user-link-right">
+              <?php print $user['name'].' '.$user['last_name']; ?>
+            </div>
+          </a>
+          <?php
+        }
+      }
+    ?>
+    </div>
+    <div class="news-nav-section">
+    </div>
   </section>
 </main>
 <section>
