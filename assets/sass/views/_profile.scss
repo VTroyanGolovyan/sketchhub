@@ -1,7 +1,7 @@
 .main-profile{
   margin-top: 50px;
   width: 70%;
-  padding: 36px 0 0 0;
+  padding: 24px 0 0 0;
   @media all{
     @media (max-width: 480px){
       width: 100%;
@@ -33,7 +33,7 @@
       //box-shadow: 0 0 4px 1px $border-color;
       border: solid 1px $border-color;
       overflow: hidden;
-      margin: 0 36px;
+      margin: 0 24px;
       img{
         width: 100%;
       }

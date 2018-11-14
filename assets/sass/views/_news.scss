@@ -2,20 +2,20 @@
   position: relative;
   margin-top: 50px;
   width: 70%;
-  padding: 36px 0 0 0;
+  padding: 24px 0 0 0;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   flex-wrap: wrap;
   .news{
-    width: calc(70% - 36px);
-    margin-right: 36px;
+    width: calc(70% - 24px);
+    margin-right: 24px;
     overflow-x: hidden;
     .news-item{
       width: calc(100% - 2px);
       background: $light-color;
       border-radius: 4px;
-      margin-bottom: 36px;
+      margin-bottom: 24px;
       border: solid 1px $border-color;
       .publisher{
         display: flex;
@@ -90,7 +90,7 @@
       border-radius: 4px;
       padding: 12px;
       border: solid 1px $border-color;
-      margin-bottom: 36px;
+      margin-bottom: 24px;
     }
     .user-link{
       display: flex;
