@@ -6,6 +6,9 @@
     if ($res->num_rows == 0){
       $query = 'INSERT IGNORE INTO `followers` (`id`,`follower`,`object`) VALUES (NULL,"'.$_SESSION[$host]['id'].'","'.$id.'")';
       $mysqli->query($query);
+      $query = 'UPDATE `users` SET `following`=`following`+1 WHERE `id`="'.$_SESSION[$host]['id'].'"; ';
+      $query .= 'UPDATE `users` SET `followers`=`followers`+1 WHERE `id`="'.$id.'"; ';
+      $mysqli->multi_query($query);
     }
   }
  ?>

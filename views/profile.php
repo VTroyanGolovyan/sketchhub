@@ -56,7 +56,7 @@
               </a>
             <?php } ?>
             </div>
-            <div class="status">
+            <div class="about">
                UA Web-Developer 17 y.o.
             </div>
           </div>

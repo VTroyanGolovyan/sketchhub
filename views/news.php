@@ -89,6 +89,9 @@
     ?>
     </div>
     <div class="news-nav-section">
+      <div class="reclam">
+        <img width="100%" src="./assets/img/d.jpg">
+      </div>
     </div>
   </section>
 </main>

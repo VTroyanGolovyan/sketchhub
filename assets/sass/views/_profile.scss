@@ -104,14 +104,32 @@
         font-family: $text-main-font;
         color: $text-main-color;
         font-weight: bold;
-
+        margin-bottom: 24px;
+      }
+      .followers-following{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        a{
+          display: flex;
+          text-decoration: none;
+          margin-right: 32px;
+          color: $text-main-color;
+          font-family: $text-main-font;
+          font-size: 0.7rem;
+          b{
+            margin-right: 4px;
+          }
+        }
+        margin-bottom: 24px;
       }
       .profile-buttons{
         display: flex;
         flex-direction: row;
-        margin-top: 32px;
+        justify-content: flex-start;
+        margin-bottom: 24px;
         label{
-          width: calc(50% - 26px);
+          width: calc(40% - 26px);
           text-align: center;
           font-size: 0.6rem;
           padding: 5px;
@@ -133,6 +151,11 @@
         #upload-photo{
           display: none;
         }
+      }
+      .about{
+        color: $text-main-color;
+        font-family: $text-main-font;
+        font-size: 0.8rem;
       }
     }
 
