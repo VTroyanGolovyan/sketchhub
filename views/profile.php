@@ -21,7 +21,7 @@
           <div class="avatar">
             <div class="avatar-mask">
               <label for = "avatar-file">Поменять</label>
-              <label>Удалить</label>
+              <a href="?cmd=unupload&act=avatar&view=profile">Удалить</a>
             </div>
             <form id="upload-avatar" action="?cmd=upload&act=avatar&view=profile" enctype = "multipart/form-data" method="post">
               <input id = "avatar-file" onchange="submit()" name = "avatar" type="file">
@@ -33,10 +33,10 @@
             <div class="name"><?php print $user['name'].' '.$user['last_name']; ?></div>
             <div class = "followers-following">
                <a href="?view=followers&id=<?php print $user['id']; ?>&type=0">
-                 Подписчики
+                 <b><?php print $user['followers']; ?></b> Подписчики
                </a>
                <a href="?view=followers&id=<?php print $user['id']; ?>&type=1">
-                 Подписки
+                 <b><?php print $user['following']; ?></b> Подписки
                </a>
             </div>
             <div class = "profile-buttons">
@@ -81,7 +81,7 @@
         $c = 12;
       }
        $query = 'SELECT * FROM `photos` WHERE `owner`="'.$id.'" ORDER BY `id` DESC LIMIT '.$l.','.$c;
-       
+
        $res = $mysqli->query($query);
        if ($res->num_rows != 0){
            while($photo = $res->fetch_assoc()){ ?>

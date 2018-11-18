@@ -18,5 +18,8 @@
          <a href="?cmd=sign&act=out">
            <div>Выход</div>
          </a>
+         <label>
+           <i class="fas fa-bell"></i>
+         </label>
        </nav>
 </header>
