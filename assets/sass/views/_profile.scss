@@ -128,7 +128,7 @@
         flex-direction: row;
         justify-content: flex-start;
         margin-bottom: 24px;
-        label{
+        label,a{
           width: calc(40% - 26px);
           text-align: center;
           font-size: 0.6rem;
@@ -141,10 +141,10 @@
           cursor: pointer;
           transition: all 0.6s;
         }
-        label:first-child{
+        label:first-child,a:first-child{
           margin-right:16px;
         }
-        label:last-child{
+        label:last-child,a:last-child{
           margin-left:16px;
 
         }

@@ -10,9 +10,13 @@
         $count = (int)($x/$count_items);
         if($x-$count*$count_items > 0)
           $count++;
-
+        if (isset($_GET['page'])){
+          $now = $_GET['page'];
+        }else{
+          $now = 1;
+        }
         for ($i = 1; $i <= $count; $i++){ ?>
-           <a href = "?view=<?php print $view; ?>&page=<?php print $i; ?>">
+           <a <?php if ($i == $now) print 'class="active"'; ?> href = "?view=<?php print $view; ?>&page=<?php print $i; ?>">
              <span>
                <?php print $i; ?>
              </span>

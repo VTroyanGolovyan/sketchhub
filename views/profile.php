@@ -6,6 +6,12 @@
     $id = $_SESSION[$host]['id'];
   }
   $query = 'SELECT * FROM `users` WHERE `id`="'.$id.'"';
+  $query2 = 'SELECT COUNT(*) AS `followers` FROM `followers` WHERE `object`="'.$id.'"';
+  $query3 = 'SELECT COUNT(*) AS `following` FROM `followers` WHERE `follower`="'.$id.'"';
+  $followers = $mysqli->query($query2)->fetch_assoc();
+  $followers = $followers['followers'];
+  $following = $mysqli->query($query3)->fetch_assoc();
+  $following = $following['following'];
   $res = $mysqli->query($query);
   if ($res->num_rows != 0){
     $user = $res->fetch_assoc();
@@ -33,10 +39,10 @@
             <div class="name"><?php print $user['name'].' '.$user['last_name']; ?></div>
             <div class = "followers-following">
                <a href="?view=followers&id=<?php print $user['id']; ?>&type=0">
-                 <b><?php print $user['followers']; ?></b> Подписчики
+                 <b><?php print $followers; ?></b> Подписчики
                </a>
                <a href="?view=followers&id=<?php print $user['id']; ?>&type=1">
-                 <b><?php print $user['following']; ?></b> Подписки
+                 <b><?php print $following; ?></b> Подписки
                </a>
             </div>
             <div class = "profile-buttons">
@@ -48,11 +54,17 @@
                 <input type = "submit">
               </form>
             <?php }else{ ?>
-              <a href = "?cmd=follow&act=in&id=<?php print $user['id']; ?>&view=profile">
-                <label>Подписаться</label>
-              </a>
+              <?php if (is_follower($mysqli,$_SESSION[$host]['id'],$user['id'])){ ?>
+                <a href = "?cmd=follow&act=un&id=<?php print $user['id']; ?>&view=profile">
+                  Отписаться
+                </a>
+              <?php } else { ?>
+                <a href = "?cmd=follow&act=in&id=<?php print $user['id']; ?>&view=profile">
+                  Подписаться
+                </a>
+              <?php } ?>
               <a>
-                <label>Сообщение</label>
+                Сообщение
               </a>
             <?php } ?>
             </div>

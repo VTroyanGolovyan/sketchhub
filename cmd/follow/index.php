@@ -4,7 +4,7 @@
       case 'in':
             include('modules/follow.php'); //подписаться
         break;
-      case 'out':
+      case 'un':
             include('modules/unfollow.php'); //отписаться
         break;
       default:

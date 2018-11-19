@@ -78,6 +78,9 @@
         font-family: $text-main-font;
         color: $text-main-color;
         font-size: 0.8rem;
+        white-space: nowrap;
+        overflow-x: hidden;
+        text-overflow: ellipsis;
         text-align: center;
       }
     }

@@ -17,4 +17,11 @@ function refresh($url)
     print '</script>';
     exit;
 }
+function is_follower($mysqli,$id1,$id2){
+  $query = 'SELECT `id` FROM `followers` WHERE `follower`="'.$id1.'" and `object`="'.$id2.'"';
+  $res = $mysqli->query($query);
+  if ($res->num_rows == 0)
+    return false;
+  else return true;
+}
  ?>

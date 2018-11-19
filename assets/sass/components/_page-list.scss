@@ -17,4 +17,12 @@
     justify-content: center;
     align-items: center;
   }
+  .active{
+    background: $buttons-color;
+    border-radius: 4px;
+    color: $light-color;
+    font-size: 0.8rem;
+    cursor: pointer;
+    border: solid 1px $buttons-outline;
+  }
 }

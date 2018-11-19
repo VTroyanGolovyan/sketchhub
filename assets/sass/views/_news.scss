@@ -17,6 +17,7 @@
       border-radius: 4px;
       margin-bottom: 24px;
       border: solid 1px $border-color;
+      overflow: hidden;
       .publisher{
         display: flex;
         justify-content: flex-start;
@@ -77,6 +78,47 @@
           align-items: center;
         }
       }
+      .comment-form{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-top: solid 1px $border-color;
+        form{
+          margin: 0;
+          padding: 0;
+          display: flex;
+          width: 100%;
+          height: 46px;
+          textarea{
+            min-width: 80%;
+            resize: none;
+            font-family: $text-main-font;
+            overflow-y: hidden;
+            padding: 8px;
+            min-height: 30px;
+            height: 30px;
+            background: $light-color;
+            max-height: 30px;
+            outline: none;
+            border: none;
+          }
+          input[type=submit]{
+            width: calc(20% - 16px);
+            resize: none;
+            font-family: $text-main-font;
+            overflow-y: hidden;
+            background: $buttons-color;
+            outline: solid 1px $buttons-outline;
+            color: $light-color;
+            font-size: 0.6rem;
+            cursor: pointer;
+            height: 46px;
+            border: none;
+          }
+        }
+      }
     }
   }
   .news-nav{
@@ -92,6 +134,10 @@
       border: solid 1px $border-color;
       margin-bottom: 24px;
     }
+    .my-profile{
+      width:calc(100% - 26px);
+      padding: 0 12px 12px 12px;
+    }
     .user-link{
       display: flex;
       justify-content: space-between;
@@ -100,21 +146,27 @@
       color: $text-main-color;
       .user-link-left{
         width: 50px;
+        height: 50px;
         border-radius: 100%;
         overflow: hidden;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
         img{
           width: 100%;
         }
       }
       .user-link-right{
-        width: calc(100% - 56px);
+        width: calc(100% - 66px);
         color: $text-main-color;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
         margin-left: 16px;
-        font-size: 0.8rem;
+        font-size: 0.7rem;
+        font-family: $text-main-font;
       }
     }
     .user-link:last-child{

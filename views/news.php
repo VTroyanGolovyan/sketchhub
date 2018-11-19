@@ -10,9 +10,17 @@
         $l = 0;
         $r = 12;
       }
-      $query = 'SELECT `photos`.*,`users`.`name`,`users`.`last_name`,`users`.`avatar` FROM `photos`
-                INNER JOIN `users` ON `photos`.`owner`=`users`.`id`
-                WHERE (`owner` IN (SELECT `object` FROM `followers` WHERE `follower`="'.$_SESSION[$host]['id'].'")) or `owner` = "'.$_SESSION[$host]['id'].'" ORDER BY `posted` DESC LIMIT '.$l.','.$r;
+      if (isset($_GET['id'])){
+        $id=(int)$_GET['id'];
+        $query = 'SELECT `photos`.*,`users`.`name`,`users`.`last_name`,`users`.`avatar` FROM `photos`
+                  INNER JOIN `users` ON `photos`.`owner`=`users`.`id`
+                  WHERE  `owner` = "'.$id.'" ORDER BY `posted` DESC LIMIT '.$l.','.$r;
+      }else{
+        $query = 'SELECT `photos`.*,`users`.`name`,`users`.`last_name`,`users`.`avatar` FROM `photos`
+                  INNER JOIN `users` ON `photos`.`owner`=`users`.`id`
+                  WHERE (`owner` IN (SELECT `object` FROM `followers` WHERE `follower`="'.$_SESSION[$host]['id'].'")) or `owner` = "'.$_SESSION[$host]['id'].'" ORDER BY `posted` DESC LIMIT '.$l.','.$r;
+      }
+
       $res = $mysqli->query($query);
       if ($res->num_rows != 0){
         while ($row = $res->fetch_assoc()){ ?>
@@ -43,6 +51,12 @@
                  <?php print $row['posted']; ?>
               </div>
             </div>
+            <div class="comment-form">
+              <form method="post" action="?cmd=coment&act=add&id=<?php print $row['id']; ?>&view=post">
+                <textarea placeholder="Введите текст коментария"></textarea>
+                <input type="submit" value="Отправить">
+              </form>
+            </div>
           </article>
 
 <?php  }
@@ -58,6 +72,29 @@
  ?>
   </section>
   <section class="news-nav">
+    <div class="my-profile">
+      <?php
+        $id = $_SESSION[$host]['id'];
+        $query = 'SELECT * FROM `users` WHERE `id`="'.$id.'"';
+        $res = $mysqli->query($query);
+        if ($res->num_rows != 0){
+          $user = $res->fetch_assoc();
+       ?>
+       <a class="user-link" href="?view=news&id=<?php print $user['id']; ?>">
+         <div class="user-link-left">
+           <?php
+             if ($user['avatar'] == "")
+               $url = 'assets/img/default.png';
+             else $url = $user['avatar'];
+           ?>
+           <img src="<?php print $url; ?>">
+         </div>
+         <div class="user-link-right">
+           <?php print $user['name'].' '.$user['last_name']; ?>
+         </div>
+       </a>
+     <?php } ?>
+    </div>
     <div class="news-nav-section">
     <?php
       $id = $_SESSION[$host]['id'];
@@ -65,12 +102,12 @@
       $where = 'WHERE `follower`="'.$id.'"';
       $join =  'INNER JOIN `users` ON `users`.`id`=`followers`.`object`';
 
-      $query = 'SELECT * FROM `followers` '.$join.' '.$where.' ORDER BY `users`.`id` LIMIT 6';
+      $query = 'SELECT * FROM `followers` '.$join.' '.$where.' ORDER BY `users`.`id` LIMIT 4';
       $res = $mysqli->query($query);
       if ($res->num_rows != 0){
         while ($user = $res->fetch_assoc()){
           ?>
-          <a class="user-link" href="#id1">
+          <a class="user-link" href="?view=news&id=<?php print $user['id']; ?>">
             <div class="user-link-left">
               <?php
                 if ($user['avatar'] == "")
@@ -97,7 +134,12 @@
 </main>
 <section>
 <?php
-   $query = 'SELECT COUNT(*) FROM `photos` WHERE (`owner` IN (SELECT `object` FROM `followers` WHERE `follower`="'.$_SESSION[$host]['id'].'")) or `owner` = "'.$_SESSION[$host]['id'].'"';
+  if (isset($_GET['id'])){
+    $id=(int)$_GET['id'];
+    $query = 'SELECT COUNT(*) FROM `photos` WHERE `owner` = "'.$id.'"';
+   }else{
+     $query = 'SELECT COUNT(*) FROM `photos` WHERE (`owner` IN (SELECT `object` FROM `followers` WHERE `follower`="'.$_SESSION[$host]['id'].'")) or `owner` = "'.$_SESSION[$host]['id'].'"';
+   }
    render_pages($mysqli,$query,12,'news');
  ?>
 </section>
