@@ -62,11 +62,22 @@
           </div>
         </header>
         <section class = "buttons">
-           <div>
-             Скетчи
+
+           <div class="page">
+             <div class="line"></div>
+             <div class="item active">
+               <i class="fas fa-camera-retro"></i>Фото
+             </div>
            </div>
-           <div>
-             Фото
+           <div class="page">
+             <div class="item">
+               <i class="fas fa-palette"></i>Скетчи
+             </div>
+           </div>
+           <div class="page">
+             <div class="item">
+               <i class="fab fa-mix"></i>Все
+             </div>
            </div>
         </section>
 
