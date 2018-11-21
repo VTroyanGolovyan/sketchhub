@@ -19,11 +19,11 @@
       if ($user != ''){
         if(strpos($user," ")){
           $arr = explode(" ",$user,2);
-          $where = 'WHERE (`name` LIKE "%'.$arr[0].'%" and `last_name` LIKE "%'.$arr[1].'%") or (`name` LIKE "%'.$arr[0].'%" and `last_name` LIKE "%'.$arr[1].'%") ';
+          $where = 'WHERE ((`name` LIKE "%'.$arr[0].'%" and `last_name` LIKE "%'.$arr[1].'%") or (`name` LIKE "%'.$arr[0].'%" and `last_name` LIKE "%'.$arr[1].'%")) AND `access` > 0 ';
         }else{
-          $where = 'WHERE `name` LIKE "%'.$user.'%" or `last_name` LIKE "%'.$user.'%" ';
+          $where = 'WHERE (`name` LIKE "%'.$user.'%" or `last_name` LIKE "%'.$user.'%") AND `access` > 0 ';
         }
-      }else $where = '';
+      }else $where = 'WHERE `access` > 0 ';
 
       if (isset($_GET['page']))
          $page = (int)$_GET['page'];

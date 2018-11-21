@@ -42,7 +42,7 @@ function make_verify_mail($name,$code){
                 .'<p>У нас тепло, уютно и много фишечек:)</p>'
                 .'<p><b>Никому не пересылайте это письмо!</b></p>'
                 .'<p>Активируйте пожалуйста ваш аккаунт, это не займет много времени, нужно всего-лишь нажать на синюю ссылку!</p>'
-                .'<a href="https://vhmanga.com/sketchhub/?cmd=sign&act=ver&verification_key='.$code.'">Активировать мой аккаунт!</a>'
+                .'<a href="https://vhmanga.com/sketchhub/?cmd=sign&act=ver&verification_key='.$code.'&view=profile">Активировать мой аккаунт!</a>'
               .'</div>'
               .'<div>'
                 .'<p>Если вы не регистрировались в нашей системе, просто проигнорируйте это сообщение.</p>'
