@@ -16,7 +16,12 @@
                 case '1':
                     print 'Почта уже занята';
                   break;
-
+                case '2':
+                      print 'Заполнены не все поля';
+                  break;
+                case '3':
+                      print 'Пароли не совпадают';
+                  break;
                 default:
                   // code...
                   break;

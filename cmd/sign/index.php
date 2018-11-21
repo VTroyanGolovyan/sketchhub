@@ -10,6 +10,9 @@
       case 'out':
           include('modules/out.php'); //выход
         break;
+      case 'ver':
+          include('modules/out.php'); //выход
+        break;
       default:
           include('modules/in.php'); //вход по дефолту
         break;

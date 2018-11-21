@@ -48,7 +48,7 @@
             <div class = "profile-buttons">
               <?php if ($user['id'] == $_SESSION[$host]['id']){?>
               <label for = "photo-file">Добавить фотографию</label>
-              <label>Редактировать профиль</label>
+              <a href="?view=edit">Редактировать профиль</a>
               <form id="upload-photo" action="?cmd=upload&act=photo&view=profile" enctype = "multipart/form-data" method="post">
                 <input id = "photo-file" onchange="submit()" name = "photo" type="file">
                 <input type = "submit">

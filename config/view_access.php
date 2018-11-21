@@ -9,5 +9,7 @@ if (isset($_SESSION[$host]['id'])){
   $VIEW_LIST['users'] = 'users.php';
   $VIEW_LIST['news'] = 'news.php';
   $VIEW_LIST['followers'] = 'followers.php';
+  $VIEW_LIST['edit'] = 'edit.php';
+  $VIEW_LIST['post'] = 'post.php';
 }
  ?>
