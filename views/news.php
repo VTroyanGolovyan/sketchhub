@@ -52,7 +52,7 @@
               </div>
             </div>
             <div class="comment-form">
-              <form method="post" action="?cmd=coment&act=add&id=<?php print $row['id']; ?>&view=post">
+              <form method="post" action="?cmd=coment&act=publish&id=<?php print $row['id']; ?>&view=post">
                 <textarea placeholder="Введите текст коментария"></textarea>
                 <input type="submit" value="Отправить">
               </form>

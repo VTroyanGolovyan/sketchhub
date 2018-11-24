@@ -12,7 +12,7 @@
  $name ='./content/userdata/'.$_SESSION[$host]['id'].'/photo/photo_'.generate_hash(15).'.png';
   $filenew = '.'.$name;
  file_put_contents($filenew, $fileData);
- $query = 'INSERT INTO `photos` (`id`,`owner`,`posted`,`url`) VALUES (NULL, "'.$_SESSION[$host]['id'].'","'.date('Y-m-d H-i-s').'","'.$name.'")';
+ $query = 'INSERT INTO `photos` (`id`,`owner`,`posted`,`url`,`type`) VALUES (NULL, "'.$_SESSION[$host]['id'].'","'.date('Y-m-d H-i-s').'","'.$name.'","1")';
  $mysqli->query($query);
   }
 ?>

@@ -177,7 +177,8 @@
       }
     }
     .item{
-
+      display: flex;
+      flex-direction: row;
       text-align: center;
       cursor: pointer;
       color: $text-main-color;
