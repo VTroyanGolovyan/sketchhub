@@ -51,4 +51,46 @@ function make_verify_mail($name,$code){
         .'</html>';
    return $body;
 }
+function correct_text($type,$count){
+  if ($type == 0){
+    $last_num = ((int)$count)%10;
+
+    switch ($last_num) {
+      case 0:
+          return 'Коментариев';
+        break;
+      case 1:
+          return 'Коментарий';
+        break;
+      case 2:
+          return 'Коментария';
+        break;
+      case 3:
+          return 'Коментария';
+        break;
+      case 4:
+          return 'Коментария';
+        break;
+      case 5:
+          return 'Коментариев';
+        break;
+      case 6:
+          return 'Коментариев';
+        break;
+      case 7:
+          return 'Коментариев';
+        break;
+      case 8:
+          return 'Коментариев';
+        break;
+      case 9:
+          return 'Коментариев';
+        break;
+      default:
+          return 'Коментариев';
+        break;
+    }
+  }
+
+}
  ?>

@@ -44,7 +44,7 @@
                   Лайки: 0
                 </div>
                 <div>
-                  Коменты: 0
+                  Коменты: <?php print $row['comments']; ?>
                 </div>
               </div>
               <div class="date">
@@ -52,8 +52,8 @@
               </div>
             </div>
             <div class="comment-form">
-              <form method="post" action="?cmd=coment&act=publish&id=<?php print $row['id']; ?>&view=post">
-                <textarea placeholder="Введите текст коментария"></textarea>
+              <form method="post" action="?cmd=comment&act=publish&id=<?php print $row['id']; ?>&view=post">
+                <textarea name="text" placeholder="Введите текст коментария"></textarea>
                 <input type="submit" value="Отправить">
               </form>
             </div>

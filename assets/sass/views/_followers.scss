@@ -1,0 +1,12 @@
+.followers-main{
+  width: calc(70% + 24px);
+  @media all{
+    @media (max-width: 480px){
+      width:calc(100% - 8px);
+      padding: 4px 0;
+        margin-top: 24px;
+    }
+  }
+  margin-top: 74px;
+
+}

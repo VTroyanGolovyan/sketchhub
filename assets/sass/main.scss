@@ -51,5 +51,9 @@ body{
 @import 'views/profile';
 @import 'views/users';
 @import 'views/news';
+@import 'views/post';
+@import 'views/followers';
 
 @import 'components/page-list';
+@import 'components/comment-form';
+@import 'components/users-list';

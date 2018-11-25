@@ -1,5 +1,5 @@
 <?php include('./template/header.php'); ?>
-<main class = "users-main">
+<main class = "followers-main">
   <?php
      if (isset($_POST['user'])){
         $user = htmlspecialchars($_POST['user']);

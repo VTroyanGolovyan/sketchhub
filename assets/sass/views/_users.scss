@@ -1,5 +1,5 @@
 .users-main{
-  width: 70%;
+  width: calc(70% + 24px);
   @media all{
     @media (max-width: 480px){
       width:calc(100% - 8px);
@@ -14,8 +14,8 @@
       }
     }
 
-    width: 100%;
-    margin:24px 0px 24px 0px;
+    width: calc(100% - 24px);
+    margin:24px 12px 24px 12px;
     form{
       display: flex;
       justify-content: space-between;
@@ -47,42 +47,5 @@
     }
   }
   margin-top: 50px;
-  .users{
-    padding: 0px 0;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: space-between;
 
-    .user{
-      @media (max-width: 480px){
-        width:calc(50% - 18px);
-        margin: 4px;
-      }
-      width:calc(25% - 34px);
-      border: 1px solid $border-color;
-      border-radius: 4px;
-      padding: 8px;
-      background: $light-color;
-      overflow: hidden;
-      margin: 0 0 24px 0;
-      .user-avatar{
-        width: 100%;
-        img{
-          width:100%;
-        }
-      }
-      .user-name{
-        font-family: $text-main-font;
-        color: $text-main-color;
-        font-size: 0.8rem;
-        white-space: nowrap;
-        overflow-x: hidden;
-        text-overflow: ellipsis;
-        text-align: center;
-      }
-    }
-  }
 }

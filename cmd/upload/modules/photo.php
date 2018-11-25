@@ -7,7 +7,7 @@ if (! empty($_FILES['photo']['name'])){
       $image->crop(800,800);
       $filenew = 'content/userdata/'.$_SESSION[$host]['id'].'/photo/photo_'.generate_hash(15);
       $filenew = $image->save($filenew);
-      $query = 'INSERT INTO `photos` (`id`,`owner`,`posted`,`url`,`type`) VALUES (NULL, "'.$_SESSION[$host]['id'].'","'.date('Y-m-d H-i-s').'","'.$filenew.'","0")';
+      $query = 'INSERT INTO `photos` (`id`,`owner`,`posted`,`url`,`type`,`comments`,`likes`) VALUES (NULL, "'.$_SESSION[$host]['id'].'","'.date('Y-m-d H-i-s').'","'.$filenew.'","0","0","0")';
       $mysqli->query($query);
     }
   }
