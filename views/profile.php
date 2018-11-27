@@ -31,10 +31,12 @@
              else $url = $user['avatar'];
            ?>
           <div class="avatar">
+            <?php if ($user['id'] == $_SESSION[$host]['id']){ ?>
             <div class="avatar-mask">
               <label for = "avatar-file">Поменять</label>
               <a href="?cmd=unupload&act=avatar&view=profile">Удалить</a>
             </div>
+            <?php } ?>
             <form id="upload-avatar" action="?cmd=upload&act=avatar&view=profile" enctype = "multipart/form-data" method="post">
               <input id = "avatar-file" onchange="submit()" name = "avatar" type="file">
               <input type = "submit">
@@ -85,7 +87,7 @@
              <?php if ($type == 0){ ?>
                <div class="line"></div>
              <?php } ?>
-             <a href="?view=profile&type=0" class="item <?php if ($type == 0) print 'active'; ?>">
+             <a href="?view=profile&id=<?php print $user['id']; ?>&type=0" class="item <?php if ($type == 0) print 'active'; ?>">
                <i class="fas fa-camera-retro"></i>Фото
              </a>
            </div>
@@ -93,7 +95,7 @@
              <?php if ($type == 1){ ?>
                <div class="line"></div>
              <?php } ?>
-             <a href="?view=profile&type=1" class="item <?php if ($type == 1) print 'active'; ?>">
+             <a href="?view=profile&id=<?php print $user['id']; ?>&type=1" class="item <?php if ($type == 1) print 'active'; ?>">
                <i class="fas fa-palette"></i>Скетчи
              </a>
            </div>
@@ -101,7 +103,7 @@
              <?php if ($type == 2){ ?>
                <div class="line"></div>
              <?php } ?>
-             <a href="?view=profile&type=2" class="item <?php if ($type == 2) print 'active'; ?>">
+             <a href="?view=profile&id=<?php print $user['id']; ?>&type=2" class="item <?php if ($type == 2) print 'active'; ?>">
                <i class="fab fa-mix"></i>Все
              </a>
            </div>
@@ -143,7 +145,7 @@
    if ($type == 2)
      $query = 'SELECT COUNT(*) FROM `photos` WHERE `owner`="'.$id.'"';
    else  $query = 'SELECT COUNT(*) FROM `photos` WHERE `owner`="'.$id.'" AND `type`="'.$type.'"';
-   render_pages($mysqli,$query,12,'profile&id='.$id);
+   render_pages($mysqli,$query,12,'profile&type='.$type.'&id='.$id);
  ?>
 </section>
 <?php include_once('./template/footer.php'); ?>
