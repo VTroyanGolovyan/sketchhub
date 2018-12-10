@@ -49,5 +49,6 @@
           else include_once('./views/signin.php');
       }
      ?>
+     <script src="./assets/js/like.js"></script>
   </body>
 </html>

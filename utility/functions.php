@@ -91,6 +91,44 @@ function correct_text($type,$count){
         break;
     }
   }
+  if ($type == 1){
+    $last_num = ((int)$count)%10;
 
+    switch ($last_num) {
+      case 0:
+          return 'Лайков';
+        break;
+      case 1:
+          return 'Лайк';
+        break;
+      case 2:
+          return 'Лайка';
+        break;
+      case 3:
+          return 'Лайка';
+        break;
+      case 4:
+          return 'Лайка';
+        break;
+      case 5:
+          return 'Лайков';
+        break;
+      case 6:
+          return 'Лайков';
+        break;
+      case 7:
+          return 'Лайков';
+        break;
+      case 8:
+          return 'Лайков';
+        break;
+      case 9:
+          return 'Лайков';
+        break;
+      default:
+          return 'Лайков';
+        break;
+    }
+  }
 }
  ?>

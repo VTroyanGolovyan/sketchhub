@@ -130,7 +130,7 @@
            while($photo = $res->fetch_assoc()){ ?>
              <a href="?view=post&id=<?php print $photo['id']; ?>" class = "photo">
                <div class = "mask">
-                 <div class = "like"><?php print $photo['likes']; ?> Лайков</div>
+                 <div class = "like"><?php print $photo['likes']; ?> <?php print correct_text(1,$photo['likes']); ?></div>
                  <div class = "coment"><?php print $photo['comments']; ?> <?php print correct_text(0,$photo['comments']); ?></div>
                </div>
                <img src = "<?php print $photo['url']; ?>">

@@ -40,11 +40,11 @@
             </div>
             <div class="info">
               <div class="counters">
-                <div>
-                  Лайки: 0
+                <div onclick="like(<?php print $row['id']; ?>)">
+                  <i class="fas fa-heart"></i><span id="likes-counter-<?php print $row['id']; ?>"> <?php print $row['likes']; ?></span>
                 </div>
                 <div>
-                  Коменты: <?php print $row['comments']; ?>
+                  <i class="fas fa-comment"></i><span> <?php print $row['comments']; ?></span>
                 </div>
               </div>
               <div class="date">
