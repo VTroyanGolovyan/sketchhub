@@ -18,8 +18,24 @@
          <a href="?cmd=sign&act=out">
            <div><i class="fas fa-sign-out-alt"></i></div>
          </a>
-         <a href="?view=news">
-           <div><i class="fas fa-bell"></i></div>
+         <a>
+           <label for="event-box"><i class="fas fa-bell"></i></label>
          </a>
        </nav>
 </header>
+<input type="checkbox" id="event-box">
+<div class="events">
+  <div class="container">
+    <div class="list-events">
+      <a>
+        Vladislav Подписался(ась) на ваши обновления
+      </a>
+      <a>
+        Vladislav Подписался(ась) на ваши обновления
+      </a>
+      <a>
+        Vladislav Подписался(ась) на ваши обновления
+      </a>
+    </div>
+  </div>
+</div>
