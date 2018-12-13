@@ -18,7 +18,7 @@
          <a href="?cmd=sign&act=out">
            <div><i class="fas fa-sign-out-alt"></i></div>
          </a>
-         <a>
+         <a onclick="getEvents()">
            <label for="event-box"><i class="fas fa-bell"></i></label>
          </a>
        </nav>
@@ -26,7 +26,7 @@
 <input type="checkbox" id="event-box">
 <div class="events">
   <div class="container">
-    <div class="list-events">
+    <div id="event-list" class="list-events">
       <a>
         Vladislav Подписался(ась) на ваши обновления
       </a>

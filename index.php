@@ -50,5 +50,6 @@
       }
      ?>
      <script src="./assets/js/like.js"></script>
+     <script src="./assets/js/events.js"></script>
   </body>
 </html>

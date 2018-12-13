@@ -1,4 +1,8 @@
 <?php
+function reg_event($mysqli,$type,$cause,$object,$receiver){
+  $query = 'INSERT INTO `events` (`id`, `cause`, `object`, `type`, `receiver`) VALUES (NULL, "'.$cause.'","'.$object.'","'.$type.'","'.$receiver.'")';
+  $mysqli->query($query);
+}
 function generate_hash($length){
      //символы из которых генерируем
      $string='qwertyuiopadfghjklzxcvbnm1234567890QWERTYUIOPASDFGHJKLZXCVBNM';
