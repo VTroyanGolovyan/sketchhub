@@ -19,7 +19,12 @@
            <div><i class="fas fa-sign-out-alt"></i></div>
          </a>
          <a onclick="getEvents()">
+
            <label for="event-box"><i class="fas fa-bell"></i></label>
+           <?php $k = get_events_count($mysqli,$_SESSION[$host]['id']); ?>
+           <?php if ($k > 0){ ?>
+           <div class="counter"><?php print $k; ?></div>
+           <?php } ?>
          </a>
        </nav>
 </header>

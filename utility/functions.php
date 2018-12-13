@@ -1,4 +1,10 @@
 <?php
+function get_events_count($mysqli,$id){
+  $query = 'SELECT COUNT(*) FROM `events` WHERE `receiver`="'.$id.'"';
+  $res = $mysqli->query($query);
+  $row = $res->fetch_assoc();
+  return $row['COUNT(*)'];
+}
 function reg_event($mysqli,$type,$cause,$object,$receiver){
   $query = 'INSERT INTO `events` (`id`, `cause`, `object`, `type`, `receiver`) VALUES (NULL, "'.$cause.'","'.$object.'","'.$type.'","'.$receiver.'")';
   $mysqli->query($query);

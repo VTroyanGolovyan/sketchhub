@@ -14,7 +14,12 @@ function getEvents(){
           document.getElementById('event-list').innerHTML="<a>Ничего нового</a>";
         for (let i = list.length-1; i > 0; i--){
           var a = document.createElement('a');
-          a.innerHTML = list[i].name+' ' + list[i].last_name + ' оценил(а) ваш пост';
+          let words = '';
+          if (list[i].type == 1)
+            words = ' оценил(а) ваш пост';
+          else if (list[i].type == 2)
+            words = ' прокоментировал(а) ваш пост';
+          a.innerHTML = list[i].name+' ' + list[i].last_name + words;
           container.appendChild(a);
         }
       }

@@ -10,6 +10,13 @@
       $query = 'INSERT INTO `comments` (`id`,`owner`,`subject`,`date`,`text`) ';
       $query.= 'VALUES (NULL,"'.$_SESSION[$host]['id'].'","'.$id.'","'.$date.'","'.$text.'")';
       $mysqli->query($query);
+      $query = 'SELECT `owner` FROM `photos` WHERE `id`="'.$id.'"';
+      $res = $mysqli->query($query);
+      if ($res->num_rows != 0){
+        $row = $res->fetch_assoc();
+        reg_event($mysqli,2,$_SESSION[$host]['id'],$id,$row['owner']);
+      }
+
     }
 
   }
