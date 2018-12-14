@@ -6,6 +6,7 @@
     if ($res->num_rows == 0){
       $query = 'INSERT INTO `followers` (`id`,`follower`,`object`) VALUES (NULL,"'.$_SESSION[$host]['id'].'","'.$id.'")';
       $mysqli->query($query);
+      reg_event($mysqli,3,$_SESSION[$host]['id'],$id,$id);
     }
   }
  ?>

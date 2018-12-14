@@ -12,6 +12,11 @@
   session_start();
 ?>
 <?php
+  if (isset($_GET['evt'])){
+    $evt = (int)$_GET['evt'];
+    $query = 'DELETE FROM `events` WHERE `id`="'.$evt.'" AND `receiver`="'.$_SESSION[$host]['id'].'"';
+    $mysqli->query($query);
+  }
   include_once('./config/cmd_access.php');
   if (isset($_GET['cmd'])){
     if (isset($CMD_LIST[$_GET['cmd']])){

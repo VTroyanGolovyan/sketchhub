@@ -28,7 +28,12 @@
             <div>
               <div class="publisher">
                 <div class="avatar">
-                  <img src="<?php print $row['avatar']; ?>">
+                  <?php
+                    if ($row['avatar'] == '')
+                     $avatar = './assets/img/default.png';
+                     else $avatar = $row['avatar'];
+                  ?>
+                  <img src="<?php print $avatar; ?>">
                 </div>
                 <div class="name">
                   <?php print $row['name'].' '.$row['last_name']; ?>
