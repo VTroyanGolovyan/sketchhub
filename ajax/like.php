@@ -15,10 +15,12 @@
         $mysqli->query($query);
         $f = true;
       }else{
+        $row = $res->fetch_assoc();
         $query = 'UPDATE `photos` SET `likes`=`likes`-1 WHERE `id`="'.$id.'"';
         $mysqli->query($query);
-
         $query = 'DELETE FROM `likes` WHERE `owner`="'.$_SESSION[$host]['id'].'" AND `subject` = "'.$id.'"';
+        $mysqli->query($query);
+        $query = 'DELETE FROM `events` WHERE `object`="'.$id.'" AND `cause`="'.$_SESSION[$host]['id'].'"';
         $mysqli->query($query);
       }
     }
@@ -30,6 +32,7 @@
       print $row['likes'];
       if ($f)
         reg_event($mysqli,1,$_SESSION[$host]['id'],$id,$row['owner']);
+
     }
   }
 
