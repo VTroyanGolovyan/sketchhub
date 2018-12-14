@@ -12,7 +12,7 @@ function getEvents(){
         document.getElementById('event-list').innerHTML="";
         if (list.length == 0)
           document.getElementById('event-list').innerHTML="<a>Ничего нового</a>";
-        for (let i = list.length-1; i > 0; i--){
+        for (let i = list.length-1; i >= 0; i--){
           var a = document.createElement('a');
           let words = '';
           if (list[i].type == 1)
