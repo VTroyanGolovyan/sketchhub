@@ -2,17 +2,18 @@
 <main class="settings">
   <div>
     <a>
-      Информация профиля
+      <i class="fas fa-info-circle"></i>Информация профиля
     </a>
     <a>
-      Безопасность
+      <i class="fas fa-key"></i>Безопасность
     </a>
   </div>
-  <form>
-    <textarea></textarea>
-    <input>
-    <input>
-
-  </form>
+  <div>
+    <form class="info">
+      <textarea></textarea>
+      <input>
+      <input>
+    </form>
+  </div>
 </main>
 <?php include('./template/footer.php'); ?>
