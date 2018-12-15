@@ -18,7 +18,7 @@ function getEvents(){
           if (list[i].type == 1)
             words = ' оценил(а) ваш пост';
           else if (list[i].type == 2)
-            words = 'прокоментировал(а) ваш пост';
+            words = ' прокоментировал(а) ваш пост';
           else if (list[i].type == 3)
             words = ' подписался(ась) на ваши обновления';
           if (list[i].type == 1)
@@ -27,8 +27,18 @@ function getEvents(){
             a.setAttribute('href','?view=post&id='+list[i].object+'&evt='+list[i].evt_id);
           else if (list[i].type == 3)
             a.setAttribute('href','?view=profile&id='+list[i].u_id+'&evt='+list[i].evt_id);
-
-          a.innerHTML = list[i].name+' ' + list[i].last_name + words;
+          var text = document.createElement('div');
+          text.innerHTML = list[i].name+' ' + words;
+          text.classList.add("evt-text");
+          let imgdiv = document.createElement('div');
+          imgdiv.classList.add('evt-img');
+          let img = new Image();
+          if (list[i].avatar == '')
+            img.src='./assets/img/default.png';
+          else img.src=list[i].avatar;
+          imgdiv.appendChild(img);
+          a.appendChild(imgdiv);
+          a.appendChild(text);
           container.appendChild(a);
         }
       }

@@ -77,7 +77,7 @@
             <?php } ?>
             </div>
             <div class="about">
-               UA Web-Developer 17 y.o.
+               <?php print $user['about']; ?>
             </div>
           </div>
         </header>
