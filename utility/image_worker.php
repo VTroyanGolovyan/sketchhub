@@ -60,23 +60,6 @@
          $this->image = $canvas;
        }
        public function crop($newwidth,$newheight){
-         /*
-          if ($this->width < $newwidth){
-             $this->resizeToWidth($newwidth);
-          }else if ($this->height < $newheight){
-             $this->resizeToHeight($newheight);
-          }else if($this->width > $newwidth){
-             $this->resizeToWidth($newwidth);
-             if ($this->height < $newheight){
-                $this->resizeToHeight($newheight);
-             }
-          }else if($this->height > $newheight){
-             $this->resizeToHeight($newheight);
-             if ($this->height < $newheight){
-                $this->resizeToWidth($newwidth);
-             }
-          }
-        */
           if ($this->height > $newheight && $this->width > $newwidth){
             if ($this->height < $this->width){
                 $this->scale($newheight/$this->height);
