@@ -60,6 +60,7 @@
          $this->image = $canvas;
        }
        public function crop($newwidth,$newheight){
+         /*
           if ($this->width < $newwidth){
              $this->resizeToWidth($newwidth);
           }else if ($this->height < $newheight){
@@ -75,17 +76,57 @@
                 $this->resizeToWidth($newwidth);
              }
           }
+        */
+          if ($this->height > $newheight && $this->width > $newwidth){
+            if ($this->height < $this->width){
+                $this->scale($newheight/$this->height);
+            }else{
+                $this->scale($newwidth/$this->width);
+            }
+          }
+          if ($this->height < $this->width){
+            if ($this->width < $newwidth){
+              $this->scale($newwidth/$this->width);
+            }
+            if ($this->height < $newheight){
+              $this->scale($newheight/$this->height);
+            }
+
+          }else{
+            if ($this->height < $newheight){
+              $this->scale($newheight/$this->height);
+            }
+            if ($this->width < $newwidth){
+              $this->scale($newwidth/$this->width);
+            }
+          }
+
+          $x = 0;
+          $y = 0;
+          if ($this->width > $newwidth){
+            $x = (int)(($this->width - $newwidth)/2);
+          }
+          if ($this->height > $newheight){
+            $y = (int)(($this->height - $newheight)/2);
+          }
           $canvas = imagecreatetruecolor($newwidth,$newheight);
           imagealphablending( $canvas, false );
           imagesavealpha( $canvas, true );
-          imagecopyresampled($canvas,$this->image,0,0,0,0,$newwidth,$newheight,$newwidth,$newheight);
+          imagecopyresampled($canvas,$this->image,0,0,$x,$y,$this->width,$this->height,$this->width,$this->height);
           $this->height = $newheight;
           $this->width = $newwidth;
           $this->image = $canvas;
        }
        public function scale($k){
-          $this->resizeToWidth($this->width*$k);
-          $this->resizeToHeight($this->height*$k);
+          $newwidth = $this->width*$k;
+          $newheight = $this->height*$k;
+          $canvas = imagecreatetruecolor($newwidth,$newheight);
+          imagealphablending( $canvas, false );
+          imagesavealpha( $canvas, true );
+          imagecopyresampled($canvas,$this->image,0,0,0,0,$newwidth,$newheight,$this->width,$this->height);
+          $this->height = $newheight;
+          $this->width = $newwidth;
+          $this->image = $canvas;
        }
        public function save($filename){
          switch ($this->mime){
