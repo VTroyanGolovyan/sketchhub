@@ -1,0 +1,28 @@
+.post-main{
+  width:70%;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  .post-left{
+    width: calc(60% - 28px);
+    overflow: hidden;
+    background: white;
+    padding: 8px;
+    border: 1px solid $border-color;
+    border-radius: 4px;
+    img{
+      width: 100%;
+    }
+  }
+  .post-right{
+    width: calc(40% - 12px);
+    overflow: hidden;
+    border: 1px solid $border-color;
+    border-radius: 4px;
+      background: white;
+  }
+}

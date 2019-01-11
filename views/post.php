@@ -10,10 +10,10 @@
       }else{
         $post = $res->fetch_assoc();
         ?>
-        <div>
+        <div class="post-left">
           <img src="<?php print $post['url']; ?>">
         </div>
-        <div>
+        <div class="post-right">
           <div class="comment-form">
             <form method="post" action="?cmd=comment&act=publish&id=<?php print $post['id']; ?>&view=post">
               <textarea name="text" placeholder="Введите текст коментария"></textarea>
@@ -40,7 +40,6 @@
                 </div>
                 <?php
               }
-
             ?>
           </div>
         </div>
