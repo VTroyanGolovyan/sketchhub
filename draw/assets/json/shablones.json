@@ -1,77 +1,17 @@
 [
   {
-    "name" : "Блокнот Rainbow A5 (эко-кожа)",
-    "url" : "assets/shablones/ra5.png",
-    "preview" : "assets/preview/ra5.jpg"
+    "name" : "1000х1000",
+    "url" : "assets/shablones/1000x1000.png",
+    "preview" : "assets/preview/1000x1000.png"
   },
   {
-    "name" : "Блокнот Rainbow A6 (эко-кожа)",
-    "url" : "assets/shablones/ra6.png",
-    "preview" : "assets/preview/ra6.jpg"
+    "name" : "1200х800",
+    "url" : "assets/shablones/1200x800.png",
+    "preview" : "assets/preview/1200x800.png"
   },
   {
-    "name" : "Блокнот Элегант А5 (эко-кожа)",
-    "url" : "assets/shablones/ea5.png",
-    "preview" : "assets/preview/ea5.jpg"
-  },
-  {
-    "name" : "Блокнот Элегант А6 (эко-кожа)",
-    "url" : "assets/shablones/ea6.png",
-    "preview" : "assets/preview/ea6.jpg"
-  },
-  {
-    "name" : "Браслет v.1.0 (эко-кожа)",
-    "url" : "assets/shablones/bv1.png",
-    "preview" : "assets/shablones/bv1.png"
-  },
-  {
-    "name" : "Визитница v.2.0 (эко-кожа)",
-    "url" : "assets/shablones/vv2.png",
-    "preview" : "assets/preview/vv2.jpg"
-  },
-  {
-    "name" : "Картхолдер v.1.0 (эко-кожа)",
-    "url" : "assets/shablones/kh1.png",
-    "preview" : "assets/preview/kh1.jpg"
-  },
-  {
-    "name" : "Картхолдер v.2.0 (эко-кожа)",
-    "url" : "assets/shablones/kh2.png",
-    "preview" : "assets/preview/kh2.png"
-  },
-  {
-    "name" : "Ключница v.1.0 (эко-кожа)",
-    "url" : "assets/shablones/kl1.png",
-    "preview" : "assets/preview/kl1.jpg"
-  },
-  {
-    "name" : "Кошелёк v.1.0 (эко-кожа)",
-    "url" : "assets/shablones/ksh1.png",
-    "preview" : "assets/preview/ksh1.jpg"
-  },
-  {
-    "name" : "Обложка на автодокументы v.1.0 (эко-кожа)",
-    "url" : "assets/shablones/oadv1.png",
-    "preview" : "assets/preview/oadv1.jpg"
-  },
-  {
-    "name" : "Обложка на автомобильные права (эко-кожа)",
-    "url" : "assets/shablones/oap.png",
-    "preview" : "assets/preview/oap.jpg"
-  },
-  {
-    "name" : "Паспорт (эко-кожа)",
-    "url" : "assets/shablones/op.png",
-    "preview" : "assets/preview/op.jpg"
-  },
-  {
-    "name" : "Портмоне v.2.0 (эко-кожа)",
-    "url" : "assets/shablones/pmv2.png",
-    "preview" : "assets/preview/pmv2.jpg"
-  },
-  {
-    "name" : "Ученический билет (эко-кожа)",
-    "url" : "assets/shablones/ub.png",
-    "preview" : "assets/preview/ub.jpg"
+    "name" : "800х1200",
+    "url" : "assets/shablones/800x1200.png",
+    "preview" : "assets/preview/800x1200.png"
   }
 ]

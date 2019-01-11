@@ -21,6 +21,15 @@
   if (isset($_GET['cmd'])){
     if (isset($CMD_LIST[$_GET['cmd']])){
       include_once('./cmd/'.$CMD_LIST[$_GET['cmd']].'/index.php');
+      $url_after_update = "./?";
+      foreach ($_GET as $key => $value) {
+        $_GET[ $key ] = htmlspecialchars(strip_tags($value));
+        if (strcmp($key, "cmd") != 0) {
+          $url_after_update .= $key . '=' . $_GET[ $key ] . '&';
+        }
+      }
+      $url_after_update = substr($url_after_update, 0, strlen($url_after_update) - 1);
+      header('Location: ' . $url_after_update);      
     }
   }
  ?>

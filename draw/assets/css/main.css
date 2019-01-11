@@ -600,6 +600,7 @@ input::-webkit-inner-spin-button {
   overflow-x: hidden;
   overflow-y: scroll;
   display: flex;
+  align-items: flex-start;
   flex-direction:row;
   justify-content: flex-start;
   flex-wrap:wrap;
