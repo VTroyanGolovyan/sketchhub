@@ -40,7 +40,7 @@ function renderDownload(){
 
     xhr.onreadystatechange = function(){
       if (xhr.readyState == 4){
-         window.open(xhr.responseText);
+         window.open(xhr.responseText,'_blank');
       }
     }
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');

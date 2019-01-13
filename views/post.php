@@ -14,7 +14,7 @@
           <img src="<?php print $post['url']; ?>">
         </div>
         <div class="post-right">
-          <div class="comment-form">
+          <div class="comment-form2">
             <form method="post" action="?cmd=comment&act=publish&id=<?php print $post['id']; ?>&view=post">
               <textarea name="text" placeholder="Введите текст коментария"></textarea>
               <input type="submit" value="Отправить">
