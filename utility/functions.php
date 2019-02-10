@@ -37,7 +37,7 @@ function is_follower($mysqli,$id1,$id2){
 function make_verify_mail($name,$code){
   $body = '<html>'
             .'<head>'
-              .'<meta charset="utf-8">'
+              .'<meta http-equiv="Content-Type" content="text/html; charset=utf-8">'
               .'<style>'
                   .'h1{ width:100%; text-align:center; }'
                   .'b{ color:red; }'

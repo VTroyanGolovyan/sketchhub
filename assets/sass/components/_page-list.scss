@@ -5,6 +5,11 @@
   flex-wrap: wrap;
   justify-content: center;
   margin-bottom: 24px;
+  @media all{
+    @media (max-width: 480px){
+      margin-bottom: 0px;
+    }
+  }
   a{
     background: $light-color;
     padding: 4px 12px;
@@ -12,6 +17,12 @@
     border: solid 1px $border-color;
     font-size: 0.8rem;
     margin: 0 12px;
+    @media all{
+      @media (max-width: 480px){
+        margin: 0 8px;
+        margin-bottom: 8px;
+      }
+    }
     color: $text-main-color;
     font-style: $text-main-font;
     display: flex;
