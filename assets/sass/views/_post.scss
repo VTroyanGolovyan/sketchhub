@@ -1,5 +1,14 @@
 .post-main{
   width:70%;
+  @media all{
+    @media (max-width: 480px){
+      width:calc(100% - 16px);
+      padding: 8px 0;
+      margin-top: 50px;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+  }
   margin-top: 50px;
   display: flex;
   flex-direction: row;
@@ -9,6 +18,15 @@
   padding-bottom: 24px;
   .post-left{
     width: calc(60% - 28px);
+    @media all{
+      @media (max-width: 480px){
+        width:calc(100% - 10px);
+        padding: 4px;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-bottom: 8px;
+      }
+    }
     overflow: hidden;
     background: white;
     padding: 8px;
@@ -20,6 +38,14 @@
   }
   .post-right{
     width: calc(40% - 12px);
+    @media all{
+      @media (max-width: 480px){
+        width:calc(100% - 10px);
+        padding: 4px;
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+    }
     overflow: hidden;
     border: 1px solid $border-color;
     border-radius: 4px;

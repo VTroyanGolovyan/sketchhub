@@ -89,7 +89,7 @@
         @media (max-width: 480px){
           width: calc(100% - 64px);
           text-align: center;
-          margin: 32px 32px;
+          margin: 32px 32px 0 32px;
         }
       }
       width: calc(100% - 418px);
@@ -110,6 +110,13 @@
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
+        @media all{
+          @media (max-width: 480px){
+              flex-direction: row;
+              justify-content: center;
+              align-items: center;
+          }
+        }
         a{
           display: flex;
           text-decoration: none;
@@ -117,8 +124,20 @@
           color: $text-main-color;
           font-family: $text-main-font;
           font-size: 0.7rem;
+          @media all{
+            @media (max-width: 480px){
+              font-size: 0.8rem;
+            }
+          }
           b{
             margin-right: 4px;
+          }
+        }
+        a:last-child{
+          @media all{
+            @media (max-width: 480px){
+                  margin-right: 0px;
+            }
           }
         }
         margin-bottom: 24px;
@@ -128,6 +147,13 @@
         flex-direction: row;
         justify-content: flex-start;
         margin-bottom: 24px;
+        @media all{
+          @media (max-width: 480px){
+              flex-direction: row;
+              justify-content: center;
+              align-items: center;
+          }
+        }
         label,a{
           width: calc(40% - 26px);
           text-align: center;
@@ -140,6 +166,12 @@
           font-family: $text-main-font;
           cursor: pointer;
           transition: all 0.6s;
+          @media all{
+            @media (max-width: 480px){
+              font-size: 0.7rem;
+                width: calc(50% - 26px);
+            }
+          }
         }
         label:first-child,a:first-child{
           margin-right:16px;
@@ -156,6 +188,11 @@
         color: $text-main-color;
         font-family: $text-main-font;
         font-size: 0.8rem;
+        @media screen {
+          @media (max-width: 480px) {
+            font-size: 1rem;
+          }
+        }
       }
     }
   }

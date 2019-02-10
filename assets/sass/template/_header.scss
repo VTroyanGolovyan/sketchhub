@@ -28,11 +28,6 @@
     }
   }
   nav{
-    @media screen {
-      @media (max-width: 480px) {
-        display: none;
-      }
-    }
     display: flex;
     flex-direction:row;
     justify-content: flex-end;
@@ -49,6 +44,11 @@
       color: $text-main-color;
       font-family: $text-main-font;
       font-size: 0.7rem;
+      @media screen {
+        @media (max-width: 480px) {
+          font-size: 1rem;
+        }
+      }
       text-align: center;
       div{
         display: flex;
@@ -73,6 +73,13 @@
           justify-content: center;
           color: $light-color;
           border-radius: 50%;
+          @media all{
+            @media (max-width: 480px){
+              font-size: 0.6rem;
+              width: 9px;
+              height: 9px;
+            }
+          }
         }
       label{
         cursor: pointer;
@@ -87,9 +94,9 @@
   background: $light-color;
   @media all{
     @media (max-width: 480px){
-      width: calc(100% - 32px);
-      padding-left: 16px;
-      padding-right: 16px;
+      width: calc(100% - 16px);
+      padding-left: 8px;
+      padding-right: 8px;
     }
   }
 }
@@ -126,26 +133,39 @@
   top:38px;
   z-index: 15000;
   width: 15%;
- left: 70%;
-
+  left: 70%;
+  @media all{
+    @media (max-width: 480px){
+      width: 45%;
+      left: auto;
+      right: 10px;
+    }
+  }
  overflow-x: hidden;
- overflow-y: visible;
+ overflow-y: hidden;
  border-radius: 4px;
 
   .container{
-    overflow-y: scroll;
-    overflow-x: hidden;
+
     margin-top: 14px;
-    width: calc(100% + 12px);
+    width: calc(100% - 2px);
     background: $light-color;
     border: solid 1px $border-color;
      border-radius: 4px;
     max-height: 160px;
     .list-events{
       padding: 12px;
+      @media all{
+        @media (max-width: 480px){
+          padding: 8px;
+        }
+      }
+      width: calc(100% + 12px);
 
-      width: calc(100% - 24px);
       display: flex;
+      overflow-y: scroll;
+      max-height: 140px;
+      overflow-x: hidden;
       flex-direction: column;
       align-items: flex-start;
       a{
@@ -156,6 +176,11 @@
         flex-direction: row;
         justify-content: flex-start;
         font-size: 0.7rem;
+        @media all{
+          @media (max-width: 480px){
+            font-size: 0.85rem;
+          }
+        }
         padding: 0 0 4px 0;
         .evt-img{
           width: 30px;

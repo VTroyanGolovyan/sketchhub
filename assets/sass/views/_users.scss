@@ -4,13 +4,14 @@
     @media (max-width: 480px){
       width:calc(100% - 8px);
       padding: 4px 0;
-        margin-top: 24px;
+        margin-top: 50px;
     }
   }
   .search-form{
     @media all{
       @media (max-width: 480px){
-        display: none;
+        margin:4px 4px 4px 4px;
+        width: calc(100% - 8px);
       }
     }
 
@@ -23,6 +24,11 @@
       input[type=text]{
         padding: 8px;
         width:calc(75% - 24px);
+        @media all{
+          @media (max-width: 480px){
+            width:calc(75% - 24px);
+          }
+        }
         border: none;
         outline: none;
         background: $light-color;
@@ -35,6 +41,11 @@
       }
       input[type=submit]{
         width:calc(25% - 18px);
+        @media all{
+          @media (max-width: 480px){
+            width:calc(25% - 4px);
+          }
+        }
         text-align: center;
         cursor: pointer;
         font-family: $text-main-font;

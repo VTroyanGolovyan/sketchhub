@@ -2,6 +2,13 @@
   position: relative;
   margin-top: 50px;
   width: 70%;
+  @media all{
+    @media (max-width: 480px){
+      width:calc(100% - 16px);
+      padding: 8px 0;
+      margin-top: 50px;
+    }
+  }
   padding: 24px 0 0 0;
   display: flex;
   justify-content: flex-start;
@@ -9,6 +16,12 @@
   flex-wrap: wrap;
   .news{
     width: calc(70% - 24px);
+    @media all{
+      @media (max-width: 480px){
+        width:100%;
+        margin-right: 0px;
+      }
+    }
     margin-right: 24px;
     overflow-x: hidden;
     .news-item{
@@ -16,6 +29,12 @@
       background: $light-color;
       border-radius: 4px;
       margin-bottom: 24px;
+      @media all{
+        @media (max-width: 480px){
+          width:calc(100% - 2px);
+          margin-bottom: 8px;
+        }
+      }
       border: solid 1px $border-color;
       overflow: hidden;
       .publisher{
@@ -72,6 +91,7 @@
             flex-direction: row;
             align-items: center;
             margin-right: 12px;
+            cursor: pointer;
           }
           span{
             display: flex;
@@ -108,6 +128,11 @@
     left: 64%;
     width:21%;
     overflow-x: hidden;
+    @media all{
+      @media (max-width: 480px){
+        display: none;
+      }
+    }
     .news-nav-section{
       width:calc(100% - 26px);
       background: $light-color;
