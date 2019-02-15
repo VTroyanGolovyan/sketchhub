@@ -1,6 +1,6 @@
 <?php
 function get_events_count($mysqli,$id){
-  $query = 'SELECT COUNT(*) FROM `events` WHERE `receiver`="'.$id.'"';
+  $query = 'SELECT COUNT(*) FROM `events` WHERE `receiver`="'.$id.'" AND `cause` != "'.$id.'"';
   $res = $mysqli->query($query);
   $row = $res->fetch_assoc();
   return $row['COUNT(*)'];

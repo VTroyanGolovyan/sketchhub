@@ -26,19 +26,20 @@
         while ($row = $res->fetch_assoc()){ ?>
           <article class="news-item">
             <div>
-              <div class="publisher">
-                <div class="avatar">
-                  <?php
-                    if ($row['avatar'] == '')
-                     $avatar = './assets/img/default.png';
-                     else $avatar = $row['avatar'];
-                  ?>
-                  <img src="<?php print $avatar; ?>">
-                </div>
-                <div class="name">
-                  <?php print $row['name'].' '.$row['last_name']; ?>
-                </div>
-              </div>
+              <a href="?view=profile&id=<?php print $row['owner']; ?>" class="publisher">
+
+                  <div class="avatar">
+                    <?php
+                      if ($row['avatar'] == '')
+                       $avatar = './assets/img/default.png';
+                       else $avatar = $row['avatar'];
+                    ?>
+                    <img src="<?php print $avatar; ?>">
+                  </div>
+                  <div class="name">
+                    <?php print $row['name'].' '.$row['last_name']; ?>
+                  </div>
+              </a>
             </div>
             <div class="image">
               <img src = "<?php print $row['url']; ?>"><br>
