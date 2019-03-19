@@ -29,7 +29,7 @@
          $page = (int)$_GET['page'];
       else $page = 1;
       $l = ($page-1)*12;
-      $r = ($page)*12;
+      $r = 12;
 
       $query = 'SELECT * FROM `users` '.$where.' ORDER BY `id` DESC LIMIT '.$l.','.$r;
       $res = $mysqli->query($query);

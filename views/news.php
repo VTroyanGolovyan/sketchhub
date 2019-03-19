@@ -42,7 +42,7 @@
               </a>
             </div>
             <div class="image">
-              <img src = "<?php print $row['url']; ?>"><br>
+              <img src = "<?php print $row['full'] == '' ? $row['url'] : $row['full']; ?>"><br>
             </div>
             <div class="info">
               <div class="counters">

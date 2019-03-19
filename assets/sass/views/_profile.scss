@@ -289,7 +289,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-       .like,.coment{
+       .like,.coment,.dellete{
          color: $light-color;
          font-family: $text-main-font;
          transform: scale(0);
@@ -316,7 +316,7 @@
     }
     .photo:hover .mask{
       opacity: 1;
-     .like,.coment{
+     .like,.coment,.dellete{
         transform: scale(1);
       }
     }

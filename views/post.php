@@ -11,7 +11,7 @@
         $post = $res->fetch_assoc();
         ?>
         <div class="post-left">
-          <img src="<?php print $post['url']; ?>">
+          <img src="<?php print $post['full'] == "" ?  $post['url'] : $post['full']; ?>">
         </div>
         <div class="post-right">
           <div class="comment-form2">
