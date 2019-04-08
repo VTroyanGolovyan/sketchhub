@@ -1,0 +1,58 @@
+.comments{
+  width: calc(100% - 16px);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  .comment{
+    width: 100%;
+    font-family: $text-main-font;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .left{
+      width: 50px;
+      height: 50px;
+      overflow: hidden;
+      border-radius: 25px;
+      img{
+        width: 100%;
+      }
+    }
+    .right{
+      width: calc(100% - 66px);
+      padding:0 8px;
+      .user{
+        font-size: 0.7rem;
+        font-weight: bold;
+        @media all{
+          @media (max-width: 480px){
+            font-size: 0.8rem;
+          }
+        }
+      }
+      .text{
+        font-size: 0.7rem;
+        font-weight: normal;
+        @media all{
+          @media (max-width: 480px){
+            font-size: 0.8rem;
+          }
+        }
+      }
+      .date{
+        ont-style: $text-main-font;
+        font-weight: lighter;
+        font-size: 0.6rem;
+        @media all{
+          @media (max-width: 480px){
+            font-size: 0.7rem;
+          }
+        }
+        display: flex;
+        justify-content: flex-start;
+      }
+    }
+  }
+}

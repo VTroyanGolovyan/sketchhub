@@ -3,19 +3,19 @@
          <h1>SketchHub</h1>
        </section>
        <nav>
-         <a target="_blank" href="draw">
+         <a title="Рисовать" target="_blank" href="draw">
            <div><i class="fas fa-paint-brush"></i></div>
          </a>
-         <a href="?view=users">
+         <a title="Люди" href="?view=users">
            <div><i class="fas fa-users"></i></div>
          </a>
-         <a href="?view=news">
+         <a title="Лента" href="?view=news">
            <div><i class="fas fa-scroll"></i></div>
          </a>
-         <a href="?view=profile">
+         <a title="Профиль" href="?view=profile">
            <div><i class="fas fa-user"></i></div>
          </a>
-         <a href="?cmd=sign&act=out">
+         <a title="Выйти" href="?cmd=sign&act=out">
            <div><i class="fas fa-sign-out-alt"></i></div>
          </a>
          <a onclick="getEvents()">
@@ -32,15 +32,6 @@
 <div class="events">
   <div class="container">
     <div id="event-list" class="list-events">
-      <a>
-        Vladislav Подписался(ась) на ваши обновления
-      </a>
-      <a>
-        Vladislav Подписался(ась) на ваши обновления
-      </a>
-      <a>
-        Vladislav Подписался(ась) на ваши обновления
-      </a>
     </div>
   </div>
 </div>
