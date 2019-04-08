@@ -5,6 +5,14 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  font-family: $text-main-font;
+font-size: 0.7rem;
+font-weight: normal;
+@media all{
+  @media (max-width: 480px){
+    font-size: 0.8rem;
+  }
+}
   .comment{
     width: 100%;
     font-family: $text-main-font;
@@ -24,6 +32,7 @@
       width: calc(100% - 66px);
       padding:0 8px;
       .user{
+          font-family: $text-main-font;
         font-size: 0.7rem;
         font-weight: bold;
         @media all{
@@ -33,6 +42,7 @@
         }
       }
       .text{
+          font-family: $text-main-font;
         font-size: 0.7rem;
         font-weight: normal;
         @media all{
@@ -42,7 +52,7 @@
         }
       }
       .date{
-        ont-style: $text-main-font;
+        font-family: $text-main-font;
         font-weight: lighter;
         font-size: 0.6rem;
         @media all{

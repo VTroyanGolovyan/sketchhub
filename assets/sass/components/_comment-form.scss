@@ -19,6 +19,7 @@
         line-height: 30px;
       padding: 8px;
       min-height: 30px;
+      margin: 0;
       height: 30px;
       background: $light-color;
       max-height: 30px;
@@ -52,14 +53,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-top: solid 1px $border-color;
-  box-shadow: 0 0 1px 1px $border-color;
   form{
     margin: 0;
     padding: 0;
     display: flex;
     width: 100%;
-
+    border-bottom:  solid 1px $border-color;
     height: 46px;
     textarea{
       min-width: calc(100% - 63px);
@@ -69,6 +68,7 @@
       padding: 8px;
       min-height: 30px;
       height: 30px;
+      margin: 0;
       line-height: 30px;
       background: $light-color;
       max-height: 30px;
