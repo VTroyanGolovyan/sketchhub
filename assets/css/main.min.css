@@ -1091,6 +1091,7 @@ main {
     font-family: "Open Sans", sans-serif;
     display: flex;
     flex-direction: row;
+    margin-bottom: 4px;
     justify-content: space-between; }
     .comments .comment .left {
       width: 50px;
