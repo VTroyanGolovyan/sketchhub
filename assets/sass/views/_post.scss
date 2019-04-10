@@ -40,8 +40,8 @@
     width: calc(40% - 12px);
     @media all{
       @media (max-width: 480px){
-        width:calc(100% - 10px);
-        padding: 4px;
+        width:calc(100% - 2px);
+        //padding: 4px;
         flex-direction: column;
         justify-content: flex-start;
       }

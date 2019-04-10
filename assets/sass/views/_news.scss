@@ -66,12 +66,15 @@
       .image{
         img{
           width: 100%;
+          display: block;
+          height: auto;
         }
         overflow: hidden;
         padding: 0;
         display: flex;
         justify-content: center;
-        flex-direction: column;
+        flex-direction: row;
+        align-items: flex-start;
         border-bottom: solid 1px $border-color;
       }
       .info{
