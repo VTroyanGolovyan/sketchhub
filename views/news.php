@@ -59,7 +59,7 @@
             </div>
             <div class="comment-form">
               <form method="post" action="?cmd=comment&act=publish&id=<?php print $row['id']; ?>&view=post">
-                <textarea name="text" placeholder="Введите текст коментария"></textarea>
+                <textarea maxlength="500" name="text" placeholder="Введите текст коментария"></textarea>
                 <label>
                   <i class="fas fa-paper-plane"></i>
                   <input type="submit" value="Отправить">
