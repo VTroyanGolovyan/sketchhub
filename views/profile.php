@@ -71,7 +71,7 @@
                   Подписаться
                 </a>
               <?php } ?>
-              <a style="opacity:0">
+              <a href="?cmd=messager&act=new_dialog&id=<?php print $user['id']; ?>&view=dialog&type=0">
                 Сообщение
               </a>
             <?php } ?>
@@ -136,7 +136,11 @@
                <img src = "<?php print $photo['url']; ?>">
              </a>
     <?php  }  ?>
-      <?php } ?>
+  <?php }else{ ?>
+              <div class="nophoto">
+                Фотографий нет
+              </div>
+  <?php } ?>
         </section>
     </main>
 <?php } ?>

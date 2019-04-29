@@ -270,6 +270,14 @@
         padding:0 8px;
       }
     }
+    .nophoto{
+      font-size: 1rem;
+      color: $text-second-color;
+      text-align: center;
+      padding: 48px 0;
+      width: 100%;
+      font-family: $text-main-font;
+    }
     .photo{
     //  border: 1px solid $border-color;
       width:calc(23vw - 16px);

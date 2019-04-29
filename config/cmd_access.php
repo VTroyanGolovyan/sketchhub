@@ -6,5 +6,6 @@
       $CMD_LIST['follow'] = 'follow';
       $CMD_LIST['user'] = 'user';
       $CMD_LIST['comment'] = 'comment';
+      $CMD_LIST['messager'] = 'messager';
     }
  ?>

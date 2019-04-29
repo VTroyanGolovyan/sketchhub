@@ -512,6 +512,13 @@ main {
   .main-profile .galery {
     padding: 0 8px; } }
 
+    .main-profile .galery .nophoto {
+      font-size: 1rem;
+      color: #999;
+      text-align: center;
+      padding: 48px 0;
+      width: 100%;
+      font-family: "Open Sans", sans-serif; }
     .main-profile .galery .photo {
       width: calc(23vw - 16px);
       height: calc(23vw - 16px);

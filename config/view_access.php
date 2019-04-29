@@ -11,5 +11,7 @@ if (isset($_SESSION[$host]['id'])){
   $VIEW_LIST['followers'] = 'followers.php';
   $VIEW_LIST['edit'] = 'edit.php';
   $VIEW_LIST['post'] = 'post.php';
+  $VIEW_LIST['dialog'] = 'dialog.php';
+  $VIEW_LIST['dialogs'] = 'dialogs.php';
 }
  ?>
