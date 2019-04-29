@@ -29,7 +29,7 @@
         }
       }
       $url_after_update = substr($url_after_update, 0, strlen($url_after_update) - 1);
-      header('Location: ' . $url_after_update);      
+      header('Location: ' . $url_after_update);
     }
   }
  ?>
