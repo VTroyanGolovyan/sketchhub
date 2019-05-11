@@ -71,7 +71,7 @@
                   Подписаться
                 </a>
               <?php } ?>
-              <a href="?cmd=messager&act=new_dialog&id=<?php print $user['id']; ?>&view=dialog&type=0">
+              <a href="?cmd=messager&act=new_dialog&user=<?php print $user['id']; ?>&view=dialog&type=0">
                 Сообщение
               </a>
             <?php } ?>

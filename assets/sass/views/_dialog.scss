@@ -1,0 +1,116 @@
+.dialog-main{
+  position: relative;
+  margin-top: 50px;
+  width: 70%;
+  @media all{
+    @media (max-width: 480px){
+      width:100%;
+      padding: 0px 0;
+      margin-top: 50px;
+    }
+  }
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  height: calc(100vh - 50px);
+  .dialog-top{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: calc(100% - 32px);
+    @media all{
+      @media (max-width: 480px){
+        padding: 0 8px;
+        width: calc(100% - 16px);
+      }
+    }
+    background: white;
+    padding: 0 16px;
+    height: 50px;
+    border-bottom: solid 1px $border-color;
+    border-right: solid 1px $border-color;
+    border-left: solid 1px $border-color;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    .avatar{
+      overflow: hidden;
+      border-radius: 100%;
+      width: 40px;
+      height: 40px;
+      margin-right: 16px;
+      img{
+        width: 100%;
+      }
+    }
+    .username{
+      font-family: $text-main-font;
+      color:$text-main-color;
+      font-size: 0.8rem;
+    }
+  }
+  .messages-list{
+    padding-top: 50px;
+  }
+  .send_panel{
+    position: absolute;
+    @media all{
+      @media (max-width: 480px){
+          position: fixed;
+      }
+    }
+    bottom: 0;
+    width: 100%;
+    height: 46px;
+    border-top: solid 1px $border-color;
+    border-right: solid 1px $border-color;
+    border-left: solid 1px $border-color;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    form{
+      margin: 0;
+      padding: 0;
+      display: flex;
+      width: 100%;
+      height: 46px;
+      textarea{
+        min-width: calc(100% - 63px);
+        resize: none;
+        font-family: $text-main-font;
+        overflow-y: hidden;
+          line-height: 30px;
+        padding: 8px;
+        min-height: 30px;
+        margin: 0;
+        height: 30px;
+        background: $light-color;
+        max-height: 30px;
+        outline: none;
+        border: none;
+      }
+      label{
+        height: 46px;
+        width:46px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-left: solid 1px $border-color;
+        cursor:pointer;
+        i{
+          font-size: 24px;
+          line-height: 30px;
+          color: $buttons-color;
+
+        }
+      }
+      input[type=submit]{
+        display: none;
+      }
+    }
+  }
+}

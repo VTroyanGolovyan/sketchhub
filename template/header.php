@@ -3,6 +3,9 @@
          <h1>SketchHub</h1>
        </section>
        <nav>
+         <a title="Выйти" href="?cmd=sign&act=out">
+           <div><i class="fas fa-sign-out-alt"></i></div>
+         </a>
          <a title="Рисовать" target="_blank" href="draw">
            <div><i class="fas fa-paint-brush"></i></div>
          </a>
@@ -15,8 +18,8 @@
          <a title="Профиль" href="?view=profile">
            <div><i class="fas fa-user"></i></div>
          </a>
-         <a title="Выйти" href="?cmd=sign&act=out">
-           <div><i class="fas fa-sign-out-alt"></i></div>
+         <a title="Диалоги" href="?view=dialogs">
+           <div><i class="fas fa-envelope"></i></div>
          </a>
          <a onclick="getEvents()">
 

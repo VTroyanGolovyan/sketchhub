@@ -1,0 +1,52 @@
+.dialogs-list{
+  width:100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  a{
+    width: calc(25% - 42px);
+    @media screen{
+      @media (max-width: 480px){
+        width: calc(50% - 18px);
+        margin: 0 4px 8px 4px;
+        padding: 4px;
+      }
+    }
+    margin: 0 12px 24px 12px;
+    padding: 8px;
+    background: white;
+    border-radius: 4px;
+    border: solid 1px $border-color;
+    .dialog-avatar{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      height: 100px;
+      width: 100%;
+      margin-bottom: 8px;
+      align-items: center;
+      .img{
+        width: 80px;
+        height: 80px;
+        border-radius: 40px;
+        overflow: hidden;
+        img{
+          width: 100%;
+        }
+      }
+    }
+    .dialog-name{
+      font-size: 0.8rem;
+      color: $text-main-color;
+      font-family: $text-main-font;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+}
